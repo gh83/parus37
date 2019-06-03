@@ -1,0 +1,19 @@
+@import '../styles/index.less';
+
+.font-face(Montserrat, '../assets/fonts/Montserrat-Light', 100, normal);
+
+header{
+    .flex(row, center, center);
+    background-color: @color-1;
+    height: 80px;
+    border-bottom: 1px solid darken(@color-1, 5%);
+    color: @color-3;
+}
+
+
+div {
+    h1 {
+        .font(Montserrat, 120px, 100, normal);
+        color: @color-1;
+    }
+}
