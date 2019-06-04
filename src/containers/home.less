@@ -1,0 +1,94 @@
+@import '../styles/index.less';
+
+.font-face(Montserrat-Light, '../assets/fonts/Montserrat-Light', 100, normal);
+.font-face(Montserrat-Medium, '../assets/fonts/Montserrat-Medium', 100, normal);
+
+.banner {
+    background: url('../assets/img/zemlya-golubaya-planeta.orig.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.container_left-text {
+    .flex(row, space-between, stretch);
+    color: @color-1;
+    padding: 15px 30px 15px 30px;
+
+    .text {
+        width: 30%;
+
+        h1 {
+            .font(Montserrat-Light, 30px, 100, normal);
+            text-transform: uppercase;
+        }
+
+        p {
+            .font(Montserrat-Medium, 15px, 100, normal);
+            text-align: justify;
+        }
+    }
+
+    .image {
+        .flex(row, space-between, flex-start);
+        flex-wrap: wrap;
+        width: 70%;
+        padding-left: 30px;
+
+        >div {
+            img {
+                @media screen and (max-width: 870px) {
+                    height: 150px;
+                }
+
+                @media screen and (max-width: 700px) {
+                    height: 100px;
+                }
+
+                height: 200px;
+            }
+        }
+    }
+}
+
+.container_right-text {
+    .flex(row, space-between, stretch);
+    color: @color-1;
+    padding: 15px 30px 15px 30px;
+
+    .text {
+        width: 30%;
+
+        h1 {
+            .font(Montserrat-Light, 30px, 100, normal);
+            text-transform: uppercase;
+        }
+
+        p {
+            .font(Montserrat-Medium, 15px, 100, normal);
+            text-align: justify;
+        }
+    }
+
+    .image {
+        .flex(row, space-between, flex-start);
+        flex-wrap: wrap;
+        width: 70%;
+        padding-right: 30px;
+
+        >div {
+            img {
+                @media screen and (max-width: 870px) {
+                    height: 150px;
+                }
+
+                @media screen and (max-width: 700px) {
+                    height: 100px;
+                }
+
+                height: 200px;
+            }
+        }
+    }
+}

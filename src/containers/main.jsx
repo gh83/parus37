@@ -8,8 +8,8 @@ export default class Main extends React.Component{
 
     render(){
         return(
-            <main>
-                fgsdfg
+            <main className='content-container'>
+                {this.props.children}
             </main>
         )
     }

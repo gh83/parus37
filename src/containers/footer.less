@@ -1,8 +1,32 @@
 @import '../styles/index.less';
 
+.font-face(Montserrat, '../assets/fonts/Montserrat-Light', 100, normal);
+
 .footer {
-    .flex(row, center, center);
+    .flex(row, space-around, center);
     background-color: @color-4;
-    color: @color-3;
     height: 80px;
+
+    span {
+        .font(Montserrat, 10px, 100, normal);
+        color: @color-3;
+    }
+    .social-icons {
+        .flex(row, center, center);
+
+        a {
+            display: block;
+            padding-left: 30px;
+            color: @color-3;
+            transition: color linear .3s;
+
+            &:hover {
+                color: @color-2;
+            }
+
+            i {
+                font-size: 50px;
+            }
+        }
+    }
 }
