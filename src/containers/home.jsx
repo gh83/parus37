@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './home.less';
 
 export default class Home extends React.Component {
@@ -6,11 +7,11 @@ export default class Home extends React.Component {
         super(props);
     }
 
-    // randomInteger(min, max) {
-    //     var rand = min - 0.5 + Math.random() * (max - min + 1)
-    //     rand = Math.round(rand);
-    //     return rand;
-    //   }
+    randomInteger(min, max) {
+        let rand = min - 0.5 + Math.random() * (max - min + 1)
+        rand = Math.round(rand);
+        return rand;
+    }
 
     render() {
         return (
@@ -27,19 +28,19 @@ export default class Home extends React.Component {
             издалека, а также дает возможность замены одной из букв без демонтажа всей вывески.</p>
                     </div>
                     <div className='image'>
-                        <div><img src='http://lorempixel.com/250/200' /></div>
-                        <div><img src='http://lorempixel.com/255/200' /></div>
-                        <div><img src='http://lorempixel.com/252/200' /></div>
-                        <div><img src='http://lorempixel.com/251/200' /></div>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
                     </div>
                 </div>
 
                 <div className='container_right-text'>
                     <div className='image'>
-                        <div><img src='http://lorempixel.com/250/200' /></div>
-                        <div><img src='http://lorempixel.com/255/201' /></div>
-                        <div><img src='http://lorempixel.com/252/202' /></div>
-                        <div><img src='http://lorempixel.com/251/203' /></div>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
                     </div>
                     <div className='text'>
                         <h1>Световые короба</h1>
@@ -56,20 +57,19 @@ export default class Home extends React.Component {
                         <p>очень важная информация про эти самые панели кронштейны</p>
                     </div>
                     <div className='image'>
-                        <div><img src='http://lorempixel.com/250/207' /></div>
-                        <div><img src='http://lorempixel.com/255/201' /></div>
-                        <div><img src='http://lorempixel.com/252/209' /></div>
-                        <div><img src='http://lorempixel.com/250/203' /></div>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
                     </div>
                 </div>
 
                 <div className='container_right-text'>
                     <div className='image'>
-                        <div><img src='http://lorempixel.com/250/203' /></div>
-                        <div><img src='http://lorempixel.com/250/201' /></div>
-                        <div><img src='http://lorempixel.com/258/205' /></div>
-                        <div><img src='http://lorempixel.com/250/206' /></div>
-                        <div><img src='http://lorempixel.com/250/203' /></div>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
                     </div>
                     <div className='text'>
                         <h1>Информационные стенды.</h1>
@@ -92,24 +92,24 @@ export default class Home extends React.Component {
             рекламы, потому что это первое, что видит клиент.</p>
                     </div>
                     <div className='image'>
-                        <div><img src='../assets/img/adress-table-1.jpg' /></div>
-                        <div><img src='../assets/img/adress-table-2.jpg' /></div>
-                        <div><img src='../assets/img/adress-table-3.jpg' /></div>
-                        <div><img src='../assets/img/adress-table-4.jpg' /></div>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
                     </div>
                 </div>
 
                 <div className='container_right-text'>
                     <div className='image'>
-                        <div><img src='http://lorempixel.com/250/202' /></div>
-                        <div><img src='http://lorempixel.com/253/201' /></div>
-                        <div><img src='http://lorempixel.com/258/205' /></div>
-                        <div><img src='http://lorempixel.com/251/203' /></div>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
                     </div>
                     <div className='text'>
                         <h1>Наклейки</h1>
                         <br />
-                        <p> очень важная информация про Наклейки</p>
+                        <p></p>
                     </div>
                 </div>
             </>

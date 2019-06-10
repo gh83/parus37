@@ -1,14 +1,16 @@
 @import '../styles/index.less';
 
-.font-face(Montserrat-Light, '../assets/fonts/Montserrat-Light', 100, normal);
-.font-face(Montserrat-Medium, '../assets/fonts/Montserrat-Medium', 100, normal);
+.font-face(Geometria-NarrowLight, '../assets/fonts/Geometria-NarrowLight', 100, normal);
+.font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
 
 .banner {
-    background: url('../assets/img/zemlya-golubaya-planeta.orig.jpg');
+    background: url('../assets/img/header_bg.jpg');
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100vh;
+    max-height: 500px;
+    margin-bottom: 50px;
 }
 
 .container_left-text {
@@ -20,33 +22,50 @@
         width: 30%;
 
         h1 {
-            .font(Montserrat-Light, 30px, 100, normal);
+            .font(Geometria-NarrowLight, 30px, 100, normal);
             text-transform: uppercase;
+
+            @media screen and (max-width: 950px) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 600px) {
+                font-size: 15px;
+            }
         }
 
         p {
-            .font(Montserrat-Medium, 15px, 100, normal);
+            .font(Geometria-Narrow, 15px, 100, normal);
             text-align: justify;
         }
     }
 
     .image {
-        .flex(row, space-between, flex-start);
-        flex-wrap: wrap;
+        .flex(row, flex-end, flex-start);
+        flex-wrap: no-wrap;
         width: 70%;
         padding-left: 30px;
 
-        >div {
-            img {
-                @media screen and (max-width: 870px) {
-                    height: 150px;
-                }
+        @media screen and (max-width: 850px) {
+            flex-wrap: wrap;
+            padding-left: 0;
+        }
 
-                @media screen and (max-width: 700px) {
-                    height: 100px;
-                }
+        >a>div {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat !important;
+            width: 200px;
+            height: 200px;
+            transition: all 1s ease;
 
-                height: 200px;
+            &:hover {
+                -webkit-filter: contrast(200%);
+            }
+
+            @media screen and (max-width: 700px) {
+                width: 150px;
+                height: 150px;
             }
         }
     }
@@ -61,33 +80,50 @@
         width: 30%;
 
         h1 {
-            .font(Montserrat-Light, 30px, 100, normal);
+            .font(Geometria-NarrowLight, 30px, 100, normal);
             text-transform: uppercase;
+
+            @media screen and (max-width: 950px) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 600px) {
+                font-size: 15px;
+            }
         }
 
         p {
-            .font(Montserrat-Medium, 15px, 100, normal);
+            .font(Geometria-Narrow, 15px, 100, normal);
             text-align: justify;
         }
     }
 
     .image {
-        .flex(row, space-between, flex-start);
-        flex-wrap: wrap;
+        .flex(row, flex-start, flex-start);
+        flex-wrap: no-wrap;
         width: 70%;
         padding-right: 30px;
 
-        >div {
-            img {
-                @media screen and (max-width: 870px) {
-                    height: 150px;
-                }
+        @media screen and (max-width: 850px) {
+            flex-wrap: wrap;
+            padding-right: 0;
+        }
 
-                @media screen and (max-width: 700px) {
-                    height: 100px;
-                }
+        >a>div {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat !important;
+            width: 200px;
+            height: 200px;
+            transition: all 1s ease;
 
-                height: 200px;
+            &:hover {
+                -webkit-filter: contrast(200%);
+            }
+
+            @media screen and (max-width: 700px) {
+                width: 150px;
+                height: 150px;
             }
         }
     }
