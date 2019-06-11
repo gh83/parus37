@@ -5,6 +5,8 @@ import Header from './containers/header';
 import Main from './containers/main';
 import Footer from './containers/footer';
 import Home from './containers/home';
+import NotFound from './containers/not-found';
+import Letter from './coponents/letter';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,6 +21,8 @@ export default class App extends React.Component {
         <Main>
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/letter' component={Letter}/>
+            <Route component={NotFound} />
           </Switch>
         </Main>
         <Footer />

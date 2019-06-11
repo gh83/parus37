@@ -33,7 +33,7 @@ export default class ArrowBegin extends React.Component {
             i = i - 10;
             window.scrollTo(0, i);
         }, delay);
-    }
+    };
 
     render() {
         const { arrowShowed } = this.state;
@@ -41,7 +41,7 @@ export default class ArrowBegin extends React.Component {
             <div id='arrow-begin' className='arrow-begin'
                 style={{ display: arrowShowed ? 'flex' : 'none' }}
                 onClick={this.smoothScroll}>
-                <i className="fa fa-arrow-circle-up" aria-hidden="true" />
+                <i className="fa fa-angle-up" aria-hidden="true" />
             </div>
         )
     }

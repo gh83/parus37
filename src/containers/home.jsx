@@ -28,13 +28,10 @@ export default class Home extends React.Component {
             издалека, а также дает возможность замены одной из букв без демонтажа всей вывески.</p>
                     </div>
                     <div className='image'>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/letter'><div style={{ background: `url(../assets/img/site/letter-1.jpg)` }} /></NavLink>
                     </div>
                 </div>
-
+                <div className='border' />
                 <div className='container_right-text'>
                     <div className='image'>
                         <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
@@ -49,12 +46,12 @@ export default class Home extends React.Component {
           популярным вариантом в наружной рекламе.</p>
                     </div>
                 </div>
-
+                <div className='border' />
                 <div className='container_left-text'>
                     <div className='text'>
                         <h1>панель кронштейн</h1>
                         <br />
-                        <p>очень важная информация про эти самые панели кронштейны</p>
+                        <p>это односторонняя или двусторонняя конструкция, которая крепится к стенам домов и мачтам уличного освещения. Используется при размещении наружной рекламы. Данное изделие является разновидностью светового короба.</p>
                     </div>
                     <div className='image'>
                         <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
@@ -63,13 +60,12 @@ export default class Home extends React.Component {
                         <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
                     </div>
                 </div>
-
+                <div className='border' />
                 <div className='container_right-text'>
                     <div className='image'>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/info-stand-1.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/info-stand-2.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/info-stand-3.jpg)` }} /></NavLink>
                     </div>
                     <div className='text'>
                         <h1>Информационные стенды.</h1>
@@ -80,7 +76,7 @@ export default class Home extends React.Component {
           позволяющей защитить их от механического воздействия.</p>
                     </div>
                 </div>
-
+                <div className='border' />
                 <div className='container_left-text'>
                     <div className='text'>
                         <h1>Таблички.</h1>
@@ -92,19 +88,20 @@ export default class Home extends React.Component {
             рекламы, потому что это первое, что видит клиент.</p>
                     </div>
                     <div className='image'>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/nameplate-1.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/nameplate-2.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/nameplate-3.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/nameplate-4.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/nameplate-5.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/nameplate-6.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/nameplate-7.jpg)` }} /></NavLink>
                     </div>
                 </div>
-
+                <div className='border' />
                 <div className='container_right-text'>
                     <div className='image'>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
-                        <NavLink to='/'><div style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/sticker-1.jpg)` }} /></NavLink>
+                        <NavLink to='/'><div style={{ background: `url(../assets/img/site/sticker-2.jpg)` }} /></NavLink>
                     </div>
                     <div className='text'>
                         <h1>Наклейки</h1>

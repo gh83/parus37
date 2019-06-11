@@ -7,16 +7,24 @@
     background: url('../assets/img/header_bg.jpg');
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
     max-height: 500px;
     margin-bottom: 50px;
 }
+.border{
+    align-self: center;
+    height: 1px;
+    width: 50vw;
+    background-color: @color-1;
+}
 
-.container_left-text {
-    .flex(row, space-between, stretch);
+.container_left-text,
+.container_right-text {
+    .flex(row, space-between, flex-start);
     color: @color-1;
-    padding: 15px 30px 15px 30px;
+    padding: 30px 30px 30px 30px;
 
     .text {
         width: 30%;
@@ -42,7 +50,7 @@
 
     .image {
         .flex(row, flex-end, flex-start);
-        flex-wrap: no-wrap;
+        flex-wrap: wrap;
         width: 70%;
         padding-left: 30px;
 
@@ -52,8 +60,9 @@
         }
 
         >a>div {
-            background-position: center;
-            background-size: cover;
+            background-position: center !important;
+            background-size: cover !important;
+            background-color: @color-1 !important;
             background-repeat: no-repeat !important;
             width: 200px;
             height: 200px;
@@ -66,65 +75,23 @@
             @media screen and (max-width: 700px) {
                 width: 150px;
                 height: 150px;
+            }
+            @media screen and (max-width: 500px) {
+                width: 100px;
+                height: 100px;
             }
         }
     }
 }
 
 .container_right-text {
-    .flex(row, space-between, stretch);
-    color: @color-1;
-    padding: 15px 30px 15px 30px;
-
-    .text {
-        width: 30%;
-
-        h1 {
-            .font(Geometria-NarrowLight, 30px, 100, normal);
-            text-transform: uppercase;
-
-            @media screen and (max-width: 950px) {
-                font-size: 20px;
-            }
-
-            @media screen and (max-width: 600px) {
-                font-size: 15px;
-            }
-        }
-
-        p {
-            .font(Geometria-Narrow, 15px, 100, normal);
-            text-align: justify;
-        }
-    }
-
     .image {
         .flex(row, flex-start, flex-start);
-        flex-wrap: no-wrap;
-        width: 70%;
         padding-right: 30px;
+        padding-left: 0;
 
         @media screen and (max-width: 850px) {
-            flex-wrap: wrap;
             padding-right: 0;
-        }
-
-        >a>div {
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat !important;
-            width: 200px;
-            height: 200px;
-            transition: all 1s ease;
-
-            &:hover {
-                -webkit-filter: contrast(200%);
-            }
-
-            @media screen and (max-width: 700px) {
-                width: 150px;
-                height: 150px;
-            }
         }
     }
 }
