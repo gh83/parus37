@@ -1,33 +1,18 @@
 import React from 'react';
 import './letter.less';
 import Slider from 'react-input-slider';
-
+import styleSlider from '../helpers/slider-style';
+console.log('styleSlider===',styleSlider)
 
 export default class Letter extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { y: 30 };
+        this.state = { y1: 30 };
     };
 
-    
-
-    styleSlider = {
-        track: {
-            backgroundColor: 'blue'
-        },
-        active: {
-            backgroundColor: 'red'
-        },
-        thumb: {
-            width: 40,
-            height: 40,
-            opacity: 0.8
-        }
-    }
-
     render() {
-
+const {y1}=this.state;
         return (<>
             {/* <div className='horisontal-slider'>{'x: ' + this.state.x}</div>
             <Slider
@@ -40,14 +25,15 @@ export default class Letter extends React.Component {
                 onChange={({ x }) => this.setState({ x: parseFloat(x.toFixed(2)) })}
             /> */}
 
-            <div className='horisontal-slider'>{'y: ' + this.state.y}</div>
-            <Slider
+            <div className='horisontal-slider'>{'y: ' + y1}</div>
+            <Slider className='olololo'
+            styles={styleSlider}
                 axis="y"
                 ystep={1}
                 ymin={0}
                 ymax={100}
-                y={this.state.y}
-                onChange={({ y }) => this.setState({ y: parseFloat(y.toFixed(2)) })}
+                y={y1}
+                onChange={({ y }) => this.setState({ y1: parseFloat(y.toFixed(2)) })}
             />
         </>
 

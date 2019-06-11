@@ -7,13 +7,10 @@ export default class ArrowBegin extends React.Component {
         this.state = {
             arrowShowed: false
         };
-    };
 
-    componentDidMount() {
-        this.arrowEl = document.getElementById('arrow-begin');
-        window.addEventListener("scroll", e => {
+        this.buttonToggle = e => {
             const { arrowShowed } = this.state;
-            if (e.pageY > 300) {
+            if (window.pageYOffset > 300) {
                 if (!arrowShowed) {
                     this.setState({ arrowShowed: true });
                 }
@@ -22,7 +19,15 @@ export default class ArrowBegin extends React.Component {
                     this.setState({ arrowShowed: false });
                 }
             }
-        });
+        }
+    };
+
+    componentDidMount() {
+        window.addEventListener("scroll", this.buttonToggle);
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.buttonToggle);
     };
 
     smoothScroll() {

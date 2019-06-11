@@ -1,12 +1,5 @@
-@import '../styles/index.less';
-
-.horisontal-slider {
-    color: @color-1;
-    font-size: 20px;
-}
-
-.ololo{
-   /* track: {
+export default {
+    track: {
         backgroundColor: 'blue'
     },
     active: {
@@ -16,5 +9,5 @@
         width: 40,
         height: 40,
         opacity: 0.8
-    }*/
+    }
 }
