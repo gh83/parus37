@@ -7,16 +7,9 @@ export default class Letter extends React.Component {
         super(props);
 
         this.state = { letterSize: 10 };
-    };
 
-    changeSizeLetter(e) {
-        console.log(e.target.value)
-        this.setState({
-            letterSize: e.target.value
-        })
-        console.log(this.state.letterSize)
-        console.log(e.target.value)
-    }
+        this.changeSizeLetter = e => this.setState({letterSize: e.target.value});
+    };
 
     render() {
         const { letterSize } = this.state;
@@ -38,7 +31,7 @@ export default class Letter extends React.Component {
                     <input
                         id='label_input-y'
                         type='text'
-                        defaultValue={letterSize}
+                        value={letterSize}
                         onChange={this.changeSizeLetter}
                     />
                 </div>

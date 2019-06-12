@@ -13,7 +13,8 @@
     max-height: 500px;
     margin-bottom: 50px;
 }
-.border{
+
+.border {
     align-self: center;
     height: 1px;
     width: 50vw;
@@ -48,7 +49,7 @@
         }
     }
 
-    .image {
+    .image-container {
         .flex(row, flex-end, flex-start);
         flex-wrap: wrap;
         width: 70%;
@@ -59,33 +60,56 @@
             padding-left: 0;
         }
 
-        >a>div {
-            background-position: center !important;
-            background-size: cover !important;
-            background-color: @color-1 !important;
-            background-repeat: no-repeat !important;
-            width: 200px;
-            height: 200px;
-            transition: all 1s ease;
+        >a {
+            text-decoration: none;
 
-            &:hover {
-                -webkit-filter: contrast(200%);
-            }
+            .image {
+                // position: relative;
+                .flex(row, center, flex-end);
+                margin-left: 5px;
+                margin-bottom: 5px;
+                background-position: center !important;
+                background-size: cover !important;
+                background-color: @color-1  !important;
+                background-repeat: no-repeat !important;
+                width: 200px;
+                height: 200px;
+                transition: all 1s ease;
 
-            @media screen and (max-width: 700px) {
-                width: 150px;
-                height: 150px;
-            }
-            @media screen and (max-width: 500px) {
-                width: 100px;
-                height: 100px;
+                &:hover {
+                    -webkit-filter: contrast(200%);
+                }
+
+                @media screen and (max-width: 700px) {
+                    width: 150px;
+                    height: 150px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .image_label {
+                    .font(Geometria-NarrowLight, 30px, 100, normal);
+                    .flex(row, center, center);
+                    // position: absolute;
+                    z-index: 100;
+                    font-size: 16px;
+                    background-color: @color-3;
+                    border-top-left-radius: 100%;
+                    border-top-right-radius: 100%;                    
+                    text-transform: uppercase;
+                    >span {                        
+                    }
+                }
             }
         }
     }
 }
 
 .container_right-text {
-    .image {
+    .image-container {
         .flex(row, flex-start, flex-start);
         padding-right: 30px;
         padding-left: 0;
