@@ -2,17 +2,16 @@ import React from 'react';
 import './letter.less';
 import Slider from 'react-input-slider';
 import styleSlider from '../helpers/slider-style';
-console.log('styleSlider===',styleSlider)
 
 export default class Letter extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { y1: 30 };
+        this.state = { letterSize: 30 };
     };
 
     render() {
-const {y1}=this.state;
+        const { letterSize } = this.state;
         return (<>
             {/* <div className='horisontal-slider'>{'x: ' + this.state.x}</div>
             <Slider
@@ -25,15 +24,15 @@ const {y1}=this.state;
                 onChange={({ x }) => this.setState({ x: parseFloat(x.toFixed(2)) })}
             /> */}
 
-            <div className='horisontal-slider'>{'y: ' + y1}</div>
-            <Slider className='olololo'
-            styles={styleSlider}
+            <div className='slider'>{'y: ' + letterSize}</div>
+            <Slider
+                styles={styleSlider}
                 axis="y"
                 ystep={1}
                 ymin={0}
                 ymax={100}
-                y={y1}
-                onChange={({ y }) => this.setState({ y1: parseFloat(y.toFixed(2)) })}
+                y={letterSize}
+                onChange={({ y }) => this.setState({ letterSize: parseFloat(y.toFixed(2)) })}
             />
         </>
 
