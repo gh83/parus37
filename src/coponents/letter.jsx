@@ -1,41 +1,48 @@
 import React from 'react';
 import './letter.less';
-import Slider from 'react-input-slider';
-import styleSlider from '../helpers/slider-style';
+
 
 export default class Letter extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { letterSize: 30 };
+        this.state = { letterSize: 10 };
     };
+
+    changeSizeLetter(e) {
+        console.log(e.target.value)
+        this.setState({
+            letterSize: e.target.value
+        })
+        console.log(this.state.letterSize)
+        console.log(e.target.value)
+    }
 
     render() {
         const { letterSize } = this.state;
-        return (<>
-            {/* <div className='horisontal-slider'>{'x: ' + this.state.x}</div>
-            <Slider
-                styles={this.styleSlider}
-                axis="x"
-                xstep={1}
-                xmin={0}
-                xmax={100}
-                x={this.state.x}
-                onChange={({ x }) => this.setState({ x: parseFloat(x.toFixed(2)) })}
-            /> */}
-
-            <div className='slider'>{'y: ' + letterSize}</div>
-            <Slider
-                styles={styleSlider}
-                axis="y"
-                ystep={1}
-                ymin={0}
-                ymax={100}
-                y={letterSize}
-                onChange={({ y }) => this.setState({ letterSize: parseFloat(y.toFixed(2)) })}
-            />
-        </>
-
+        return (
+            <div className='letter'>
+                <div className='slider-y'>
+                    <div className='slider-y_label'>{letterSize + ' m'}</div>
+                    <input
+                        id='input-y'
+                        className='input-y'
+                        type="range"
+                        min="1"
+                        max="100"
+                        step='1'
+                        onChange={this.changeSizeLetter}
+                        // onInput={this.changeSizeLetter}
+                        defaultValue={letterSize}
+                    />
+                    <input
+                        id='label_input-y'
+                        type='text'
+                        defaultValue={letterSize}
+                        onChange={this.changeSizeLetter}
+                    />
+                </div>
+            </div >
         )
     }
 }

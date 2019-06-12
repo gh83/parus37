@@ -1,6 +1,24 @@
 @import '../styles/index.less';
 
-.slider {
-    color: @color-1;
-    font-size: 20px;
+.font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
+
+.letter {
+    .flex(row, center, center);
+
+
+    .slider-y {
+        height: 300px;
+        width: 300px;
+
+        .input-y {
+            transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+        }
+
+        .slider-y_label {
+            .font(Geometria-Narrow, 15px, 100, normal);
+            color: @color-1;
+            font-size: 20px;
+        }
+    }
 }
