@@ -9,13 +9,14 @@
         .flex(column, flex-start, stretch);
 
         .calc_size-letter {
-            .flex(row, center, flex-start);
+            .flex(row, center, flex-end);
 
             .slider-y {
                 position: relative;
                 height: 150px;
                 width: 150px;
                 margin-top: 50px;
+                margin-right: 70px;
 
                 .input-y {
                     transform: rotate(270deg);
@@ -55,7 +56,33 @@
             }
 
             .calc_letter-select {
-                .flex(row, center, flex-start);
+                .flex(row, center, center);
+                text-align: center;
+
+                >div {
+                    .flex(column,center,center);
+                    border: 1px solid @color-1;
+                    border-radius: 4px;
+                    width: 120px;
+                    height: 150px;;
+                    margin-left: 15px;
+
+                    >span:nth-child(1) {
+                        font-size: 90px;
+                        color: @color-1;
+                    }
+                }
+
+                >div:nth-child(1) {
+                    >span:nth-child(1) {
+                        .font(Geometria-Narrow, 90px, 100, normal);
+                    }
+                }
+                >div:nth-child(3) {
+                    >span:nth-child(1) {
+                        font-style: italic;
+                    }
+                }
             }
         }
 

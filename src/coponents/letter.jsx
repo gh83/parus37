@@ -1,13 +1,15 @@
 import React from 'react';
 import './letter.less';
+import { LetterCost } from '../data/cost';
 
 
 export default class Letter extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = { letterSize: 1 };
-
+        this.state = {
+            letterSize: 1,
+            letterStyle: null,
+        };
         this.changeSizeLetter = e => this.setState({ letterSize: e.target.value });
     };
 
@@ -39,12 +41,25 @@ export default class Letter extends React.Component {
                             </div>
                             <div className='calc-banner' />
                         </div>
-                        <div className='calc_letter-select'></div>
+                        <div className='calc_letter-select'>
+                            <div>
+                                <span>R</span>
+                                <span>шрифт простой</span>
+                            </div>
+                            <div>
+                                <span>R</span>
+                                <span>шрифт с засечками</span>
+                            </div>
+                            <div>
+                                <span>R</span>
+                                <span>шрифт прописной</span>
+                            </div>
+                        </div>
                     </div>
                     <div className='calc_text'></div>
                     <div className='calc_example-cost'></div>
                 </div>
             </div >
-        )
-    }
-}
+        );
+    };
+};
