@@ -3,22 +3,64 @@
 .font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
 
 .letter {
-    .flex(row, center, center);
+    .flex(row, space-around, flex-start);
 
+    .calc {
+        .flex(column, flex-start, stretch);
 
-    .slider-y {
-        height: 300px;
-        width: 300px;
+        .calc_size-letter {
+            .flex(row, center, flex-start);
 
-        .input-y {
-            transform: rotate(270deg);
-            -moz-transform: rotate(270deg);
+            .slider-y {
+                position: relative;
+                height: 150px;
+                width: 150px;
+                margin-top: 50px;
+
+                .input-y {
+                    transform: rotate(270deg);
+                    -moz-transform: rotate(270deg);
+                    position: absolute;
+                    bottom: 52px;
+                    left: -64px;
+                }
+
+                .slider-y_label {
+                    .flex(row, flex-start, flex-start);
+                    position: absolute;
+                    top: -40px;
+                    left: -10px;
+
+                    >div {
+                        .font(Geometria-Narrow, 15px, 100, normal);
+                        color: @color-1;
+                        font-size: 20px;
+                        padding-left: 5px;
+                    }
+                }
+
+                .calc-banner {
+                    background: url('../assets/img/site/letter-1.jpg');
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 150px;
+                    height: 150px;
+                    position: absolute;
+                    top: 0;
+                    right: -50px;
+                    border-radius: 4px;
+
+                }
+            }
+
+            .calc_letter-select {
+                .flex(row, center, flex-start);
+            }
         }
 
-        .slider-y_label {
-            .font(Geometria-Narrow, 15px, 100, normal);
-            color: @color-1;
-            font-size: 20px;
-        }
+        .calc_text {}
+
+        .calc_example-cost {}
     }
 }
