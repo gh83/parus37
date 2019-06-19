@@ -1,12 +1,17 @@
 @import '../styles/index.less';
 
 .font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
+.font-face(Geometria-NarrowLight, '../assets/fonts/Geometria-NarrowLight', 100, normal);
 
 .letter {
     .flex(row, space-around, flex-start);
 
     .calc {
         .flex(column, flex-start, stretch);
+        // width: 70%;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 30px;
 
         .calc_size-letter {
             .flex(row, center, flex-end);
@@ -17,6 +22,9 @@
                 width: 150px;
                 margin-top: 50px;
                 margin-right: 70px;
+                @media screen and (max-width: 650px) {
+                    margin-right: -100px;
+                }
 
                 .input-y {
                     transform: rotate(270deg);
@@ -51,7 +59,9 @@
                     top: 0;
                     right: -50px;
                     border-radius: 4px;
-
+                    @media screen and (max-width: 650px) {
+                        display: none;
+                    }
                 }
             }
 
@@ -60,12 +70,25 @@
                 text-align: center;
 
                 >div {
-                    .flex(column,center,center);
+                    .flex(column, center, center);
                     border: 1px solid @color-1;
                     border-radius: 4px;
                     width: 120px;
-                    height: 150px;;
+                    height: 150px;
                     margin-left: 15px;
+
+                    &:hover {
+                        border-color: @color-2;
+                        cursor: pointer;
+                    }
+
+                    &.active {
+                        border-color: @color-2;
+
+                        >span:first-child {
+                            color: @color-2;
+                        }
+                    }
 
                     >span:nth-child(1) {
                         font-size: 90px;
@@ -78,6 +101,7 @@
                         .font(Geometria-Narrow, 90px, 100, normal);
                     }
                 }
+
                 >div:nth-child(3) {
                     >span:nth-child(1) {
                         font-style: italic;
@@ -86,8 +110,53 @@
             }
         }
 
-        .calc_text {}
+        .calc_text {
+            .flex(column, flex-start, flex-start);
+            padding-top: 30px;
+            align-self: center;
 
-        .calc_example-cost {}
+            >span {
+                .font(Geometria-NarrowLight, 15px, 100, normal);
+                color: @color-1;
+                font-size: 10px;
+                text-transform: uppercase;
+                padding-top: 5px;
+            }
+        }
+
+        .calc_example-cost {
+            .flex(column, flex-start, stretch);
+            padding-top: 30px;
+            color: @color-1;
+            .font(Geometria-Narrow, 15px, 100, normal);
+
+            .calc_template-letter {
+                .flex(row, flex-start, center);
+                padding-top: 10px;
+
+                >img {
+                    display: block;
+                    width: 25%;
+                    max-width: 200px;
+                }
+
+                .calc_template-letter_about {
+                    .flex(column, flex-start, flex-start);
+                    width: 65%;
+                    padding-left: 20px;
+
+                    >span {
+                        .font(Geometria-NarrowLight, 20px, 100, normal);
+                        text-transform: uppercase;
+                        padding-bottom: 10px;
+                    }
+                }
+
+                .calc_template-letter_cost {
+                    .flex(row, center, center);
+                    width: 10%;
+                }
+            }
+        }
     }
 }

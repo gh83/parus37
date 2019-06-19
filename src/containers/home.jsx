@@ -47,7 +47,7 @@ export default class Home extends React.Component {
 
                 <div className='container_right-text'>
                     <div className='image-container'>
-                        <NavLink to='/'>
+                        <NavLink to='/light-box'>
                             <div
                                 className='image'
                                 style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }}
@@ -60,7 +60,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/light-box'>
                             <div
                                 className='image'
                                 style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }}
@@ -73,7 +73,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/light-box'>
                             <div
                                 className='image'
                                 style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }}
@@ -86,7 +86,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/light-box'>
                             <div
                                 className='image'
                                 style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }}
@@ -118,7 +118,7 @@ export default class Home extends React.Component {
                         <p>это односторонняя или двусторонняя конструкция, которая крепится к стенам домов и мачтам уличного освещения. Используется при размещении наружной рекламы. Данное изделие является разновидностью светового короба.</p>
                     </div>
                     <div className='image-container'>
-                        <NavLink to='/'>
+                        <NavLink to='/panel'>
                             <div
                                 className='image'
                                 style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }}
@@ -131,7 +131,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/panel'>
                             <div
                                 className='image'
                                 style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }}
@@ -144,7 +144,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/panel'>
                             <div
                                 className='image'
                                 style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }}
@@ -157,7 +157,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/panel'>
                             <div
                                 className='image'
                                 style={{ background: `url(http://lorempixel.com/20${this.randomInteger(0, 9)}/20${this.randomInteger(0, 9)})` }}
@@ -179,7 +179,7 @@ export default class Home extends React.Component {
 
                 <div className='container_right-text'>
                     <div className='image-container'>
-                        <NavLink to='/'>
+                        <NavLink to='/info-stand'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/info-stand-1.jpg)` }}
@@ -192,7 +192,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/info-stand'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/info-stand-1.jpg)` }}
@@ -205,7 +205,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/info-stand'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/info-stand-1.jpg)` }}
@@ -237,7 +237,7 @@ export default class Home extends React.Component {
                         <p>Табличка – это рекламная конструкция, которая кроме названия и логотипа содержит ещё и информацию о предоставляемых услугах и товарах и графике работы. Табличка - отличное решение для недорогой, но заметной рекламы, потому что это первое, что видит клиент.</p>
                     </div>
                     <div className='image-container'>
-                        <NavLink to='/'>
+                        <NavLink to='/table'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/nameplate-1.jpg)` }}
@@ -250,7 +250,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/table'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/nameplate-2.jpg)` }}
@@ -263,7 +263,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/table'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/nameplate-3.jpg)` }}
@@ -276,7 +276,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/table'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/nameplate-4.jpg)` }}
@@ -289,7 +289,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/table'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/nameplate-5.jpg)` }}
@@ -302,7 +302,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/table'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/nameplate-6.jpg)` }}
@@ -315,7 +315,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/table'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/nameplate-7.jpg)` }}
@@ -337,7 +337,7 @@ export default class Home extends React.Component {
 
                 <div className='container_right-text'>
                     <div className='image-container'>
-                        <NavLink to='/'>
+                        <NavLink to='/sticker'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/sticker-1.jpg)` }}
@@ -350,7 +350,7 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                         </NavLink>
-                        <NavLink to='/'>
+                        <NavLink to='/sticker'>
                             <div
                                 className='image'
                                 style={{ background: `url(../assets/img/site/sticker-2.jpg)` }}
