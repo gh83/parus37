@@ -2,7 +2,7 @@
 
 .font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
 
-.menu {
+.menu.large {
     .flex(column, flex-start, flex-start);
     border: 1px solid @color-1;
     margin-top: 20px;
@@ -30,5 +30,38 @@
         &.active {
             color: @color-2;
         }
+    }
+}
+
+.menu.mobile {
+    .flex(column, flex-start, flex-start);
+    .font(Geometria-Narrow, 35px, 100, normal);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    >a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        color: @color-1;
+        padding: 15px 10px;
+        cursor: pointer;
+        background-color: @color-2;
+        border-top: 1px solid lighten(@color-1, 50%);
+
+        &:hover {
+            background-color: lighten(@color-1, 50%);
+        }
+
+        &.active {
+            color: @color-3;
+        }
+    }
+
+    @media screen and (min-width: 950px) {
+        display: none;
     }
 }

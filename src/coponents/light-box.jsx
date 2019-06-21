@@ -10,7 +10,7 @@ export default class LightBox extends React.Component{
     render(){
         return(
             <div className='light-box'>
-                <Menu/>
+                <Menu  type='large'/>
                 <div>инфа, картинки и цены про световые короба</div>
             </div>
         )

@@ -13,6 +13,10 @@
         padding-left: 30px;
         padding-bottom: 30px;
 
+        @media screen and (max-width: 650px) {
+            padding: 30px 20px 30px 5px
+        }
+
         .calc_size-letter {
             .flex(row, center, flex-end);
 
@@ -22,8 +26,9 @@
                 width: 150px;
                 margin-top: 50px;
                 margin-right: 70px;
+
                 @media screen and (max-width: 650px) {
-                    margin-right: -100px;
+                    margin-right: -130px;
                 }
 
                 .input-y {
@@ -59,6 +64,7 @@
                     top: 0;
                     right: -50px;
                     border-radius: 4px;
+
                     @media screen and (max-width: 650px) {
                         display: none;
                     }
@@ -76,6 +82,11 @@
                     width: 120px;
                     height: 150px;
                     margin-left: 15px;
+                    z-index: 10;
+
+                    @media screen and (max-width: 650px) {
+                        width: 70px;
+                    }
 
                     &:hover {
                         border-color: @color-2;
@@ -90,15 +101,28 @@
                         }
                     }
 
-                    >span:nth-child(1) {
+                    span:nth-child(1) {
                         font-size: 90px;
+                        color: @color-1;
+
+                        @media screen and (max-width: 650px) {
+                            font-size: 60px;
+                        }
+                    }
+
+                    span:nth-child(2) {
+                        .font(Geometria-NarrowLight, 13px, 100, normal);
                         color: @color-1;
                     }
                 }
 
-                >div:nth-child(1) {
-                    >span:nth-child(1) {
+                div:nth-child(1) {
+                    span:nth-child(1) {
                         .font(Geometria-Narrow, 90px, 100, normal);
+
+                        @media screen and (max-width: 650px) {
+                            font-size: 60px;
+                        }
                     }
                 }
 
@@ -149,12 +173,30 @@
                         .font(Geometria-NarrowLight, 20px, 100, normal);
                         text-transform: uppercase;
                         padding-bottom: 10px;
+
+                        @media screen and (max-width: 650px) {
+                            font-size: 15px;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            .font(Geometria-Narrow, 15px, 100, normal);
+
+                            @media screen and (max-width: 650px) {
+                                font-size: 13px;
+                            }
+                        }
                     }
                 }
 
                 .calc_template-letter_cost {
-                    .flex(row, center, center);
-                    width: 10%;
+                    .flex(column-reverse, center, center);
+                    width: 50px;
+
+                    >div {
+                        .flex(row, center, center);
+                    }
                 }
             }
         }

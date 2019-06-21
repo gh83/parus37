@@ -10,7 +10,7 @@ export default class Table extends React.Component{
     render(){
         return(
             <div className='table'>
-                <Menu/>
+                <Menu  type='large'/>
                 <div>инфа, картинки и цены про про таблички</div>
             </div>
         )

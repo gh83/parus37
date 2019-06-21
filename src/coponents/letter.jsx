@@ -34,7 +34,7 @@ export default class Letter extends React.Component {
 
         return (
             <div className='letter'>
-                <Menu/>
+                <Menu  type='large'/>
                 <div className='calc'>
                     <div className='calc_size-letter'>
                         <div className='slider-y'>
@@ -104,9 +104,12 @@ export default class Letter extends React.Component {
                                     </ul>
                                 </div>
                                 <div className='calc_template-letter_cost'>
-                                    <span>от&nbsp;</span>
-                                    {item.cost * cost}
-                                    <span>&nbsp;&#8381;</span>
+                                    <button className='global-button'>заказать</button>
+                                    <div>
+                                        <span>от&nbsp;</span>
+                                        {item.cost * cost}
+                                        <span>&nbsp;&#8381;</span>
+                                    </div>
                                 </div>
                             </div>
                         ))}
