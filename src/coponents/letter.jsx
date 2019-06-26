@@ -34,7 +34,7 @@ export default class Letter extends React.Component {
 
         return (
             <div className='letter'>
-                <Menu  type='large'/>
+                
                 <div className='calc'>
                     <div className='calc_size-letter'>
                         <div className='slider-y'>

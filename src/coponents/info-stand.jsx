@@ -10,7 +10,7 @@ export default class InfoStand extends React.Component{
     render(){
         return(
             <div className='info-stand'>
-                <Menu  type='large'/>
+              
                 <div>инфа, картинки и цены про про стэнды</div>
             </div>
         )

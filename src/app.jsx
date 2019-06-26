@@ -12,6 +12,7 @@ import Panel from './coponents/panel';
 import InfoStand from './coponents/info-stand';
 import Table from './coponents/table';
 import Sticker from './coponents/sticker';
+import Contacts from './coponents/contacts';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ export default class App extends React.Component {
             <Route exact path='/info-stand' component={InfoStand}/>
             <Route exact path='/table' component={Table}/>
             <Route exact path='/sticker' component={Sticker}/>
+            <Route exact path='/contacts' component={Contacts}/>
             <Route component={NotFound} />
           </Switch>
         </Main>

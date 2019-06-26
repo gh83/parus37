@@ -115,7 +115,7 @@ export default class Home extends React.Component {
 
                     <div className='container_left-text'>
                         <div className='text'>
-                            <h1>панель кронштейн</h1>
+                            <h1>Панель кронштейн</h1>
                             <br />
                             <p>это односторонняя или двусторонняя конструкция, которая крепится к стенам домов и мачтам уличного освещения. Используется при размещении наружной рекламы. Данное изделие является разновидностью светового короба.</p>
                             <NavLink to='/panel'><button className='global-button text_order-button'>заказать</button></NavLink>

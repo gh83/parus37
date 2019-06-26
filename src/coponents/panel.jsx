@@ -10,7 +10,7 @@ export default class Panel extends React.Component{
     render(){
         return(
             <div className='panel'>
-                <Menu  type='large'/>
+                
                 <div>инфа, картинки и цены про про панели</div>
             </div>
         )

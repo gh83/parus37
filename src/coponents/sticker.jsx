@@ -10,7 +10,7 @@ export default class Sticker extends React.Component{
     render(){
         return(
             <div className='sticker'>
-                <Menu  type='large'/>
+               
                 <div>инфа, картинки и цены про про наклейки</div>
             </div>
         )

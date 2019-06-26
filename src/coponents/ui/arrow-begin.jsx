@@ -43,10 +43,14 @@ export default class ArrowBegin extends React.Component {
     render() {
         const { arrowShowed } = this.state;
         return (
-            <div id='arrow-begin' className='arrow-begin'
+            <div
+                id='arrow-begin'
+                className='arrow-begin'
                 style={{ display: arrowShowed ? 'flex' : 'none' }}
-                onClick={this.smoothScroll}>
+                onClick={this.smoothScroll}
+            >
                 <i className="fa fa-angle-up" aria-hidden="true" />
+                <span>наверх</span>
             </div>
         )
     }
