@@ -17,6 +17,10 @@
     .flex(column, flex-start, stretch);
     padding: 50px 30px;
 
+    @media screen and (min-width: 1780px) {
+        padding: 30px 105px;
+    }
+
     @media screen and (max-width: 780px) {
         padding: 30px 5px;
     }
@@ -91,6 +95,10 @@
         .image-container {
             .flex(row, flex-end, flex-start);
             flex-wrap: wrap;
+
+            @media screen and (max-width: 570px) {
+                .flex(row, center, flex-start);
+            }
 
             >a {
                 text-decoration: none;
@@ -175,6 +183,9 @@
         .image-container {
             .flex(row, flex-start, flex-start);
 
+            @media screen and (max-width: 570px) {
+                .flex(row, center, flex-start);
+            }
         }
     }
 }
