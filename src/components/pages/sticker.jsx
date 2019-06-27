@@ -1,6 +1,5 @@
 import React from 'react';
 import './sticker.less';
-import Menu from './menu';
 
 export default class Sticker extends React.Component{
     constructor(props){

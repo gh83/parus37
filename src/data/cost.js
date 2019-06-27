@@ -7,7 +7,7 @@ export const LetterCost = {
     },
     type: [{
             cost: 1,
-            title: 'Плоские',
+            title: 'Плоские буквы',
             img: '../assets/img/site/letter-1.jpg',
             content: ['ПВХ или композитный материал от 3 мм']
         },

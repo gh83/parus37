@@ -1,6 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './home.less';
+import Advantages from '../components/others/advantages';
+import Galary from '../components/others/galary';
+import Partners from '../components/others/partners';
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -377,6 +380,13 @@ export default class Home extends React.Component {
                         </div>
                     </div>
                 </section>
+
+                <div className='border' />
+                <Advantages />
+                <div className='border' />
+                <Galary />
+                <div className='border' />
+                <Partners />
             </>
         )
     }

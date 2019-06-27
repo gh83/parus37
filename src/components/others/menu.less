@@ -1,37 +1,6 @@
-@import '../styles/index.less';
+@import '../../styles/index.less';
 
 .font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
-
-// .menu.large {
-//     .flex(column, flex-start, flex-start);
-//     border: 1px solid @color-1;
-//     margin-top: 20px;
-//     border-radius: 4px;
-//     // width: 150px;
-//     overflow: hidden;
-//     margin-left: 30px;
-
-//     @media screen and (max-width: 950px) {
-//         display: none;
-//     }
-
-//     >a {
-//         display: block;
-//         text-decoration: none;
-//         width: 100%;
-//         color: @color-1;
-//         padding: 5px 10px;
-//         .font(Geometria-Narrow, 15px, 100, normal);
-
-//         &:hover {
-//             background-color: lighten(@color-1, 50%);
-//         }
-
-//         &.active {
-//             color: @color-2;
-//         }
-//     }
-// }
 
 .menu.mobile {
     .flex(column, flex-start, flex-start);
@@ -43,7 +12,10 @@
     right: 0;
 
     >a {
-        // &:first-child{display: none;}
+        &:first-child {
+            display: none;
+        }
+
         display: block;
         text-decoration: none;
         width: 100%;
@@ -78,11 +50,14 @@
     >a {
         display: block;
         text-decoration: none;
-        padding: 10px 0;
-        margin-left: 10px;
+        padding: 10px 5px;
         color: @color-4;
-        font-size: 15px;
+        font-size: 14px;
         transition: color linear .2s;
+
+        &:not(:first-child) {
+            border-left: 1px solid lighten(@color-2, 35%);
+        }
 
         &:hover {
             color: @color-2;

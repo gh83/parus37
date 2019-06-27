@@ -1,4 +1,4 @@
-@import '../styles/index.less';
+@import '../../styles/index.less';
 
 .font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
 .font-face(Geometria-NarrowLight, '../assets/fonts/Geometria-NarrowLight', 100, normal);
@@ -47,14 +47,14 @@
 
                     >div {
                         .font(Geometria-Narrow, 15px, 100, normal);
-                        color: @color-1;
+                        color: @color-4;
                         font-size: 20px;
                         padding-left: 5px;
                     }
                 }
 
                 .calc-banner {
-                    background: url('../assets/img/site/letter-1.jpg');
+                    background: url('../../assets/img/site/letter-1.jpg');
                     background-position: center;
                     background-size: cover;
                     background-repeat: no-repeat;
@@ -140,8 +140,8 @@
             align-self: center;
 
             >span {
-                .font(Geometria-NarrowLight, 15px, 100, normal);
-                color: @color-1;
+                // .font(Geometria-NarrowLight, 15px, 100, normal);
+                color: @color-4;
                 font-size: 10px;
                 text-transform: uppercase;
                 padding-top: 5px;
@@ -151,8 +151,13 @@
         .calc_example-cost {
             .flex(column, flex-start, stretch);
             padding-top: 30px;
-            color: @color-1;
-            .font(Geometria-Narrow, 15px, 100, normal);
+            color: @color-4;
+
+            // .font(Geometria-Narrow, 15px, 100, normal);
+            .calc_example-cost_title {
+                .flex(row, space-between, center);
+                padding: 10px 30px;
+            }
 
             .calc_template-letter {
                 .flex(row, flex-start, center);
@@ -170,9 +175,11 @@
                     padding-left: 20px;
 
                     >span {
-                        .font(Geometria-NarrowLight, 20px, 100, normal);
-                        text-transform: uppercase;
+                        // .font(Geometria-NarrowLight, 20px, 100, normal);
+                        // text-transform: uppercase;
                         padding-bottom: 10px;
+                        font-weight: bold;
+                        font-size: 20px;
 
                         @media screen and (max-width: 650px) {
                             font-size: 15px;

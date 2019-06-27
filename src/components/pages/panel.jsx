@@ -1,6 +1,5 @@
 import React from 'react';
 import './panel.less';
-import Menu from './menu';
 
 export default class Panel extends React.Component{
     constructor(props){

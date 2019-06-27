@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Menu from '../coponents/menu';
+import Menu from '../components/others/menu';
 import './header.less';
-import Backdrop from '../coponents/ui/backdrop';
-import SocialIcons from '../coponents/ui/social-icons';
+import Backdrop from '../components/ui/backdrop';
+import SocialIcons from '../components/ui/social-icons';
 
 export default class Header extends React.Component {
     constructor(props) {

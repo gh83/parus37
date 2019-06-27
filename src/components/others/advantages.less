@@ -1,0 +1,31 @@
+@import '../../styles/index.less';
+
+.advantages {
+    .flex(column, center, center);
+    padding: 30px;
+
+    h2 {
+        text-align: center;
+    }
+
+    >div {
+        .flex(row, center, center);
+        flex-wrap: wrap;
+
+        >div {
+            .flex(row, center, center);
+            padding: 15px;
+
+            i {
+                color: @color-2;
+                font-size: 15px;
+            }
+
+            span {
+                color: @color-4;
+                font-size: 15px;
+                padding-left: 10px;
+            }
+        }
+    }
+}

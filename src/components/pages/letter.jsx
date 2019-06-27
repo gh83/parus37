@@ -1,7 +1,6 @@
 import React from 'react';
 import './letter.less';
-import { LetterCost } from '../data/cost';
-import Menu from './menu';
+import { LetterCost } from '../../data/cost';
 
 export default class Letter extends React.Component {
     constructor(props) {
@@ -86,12 +85,20 @@ export default class Letter extends React.Component {
                         <input
                             className='input-text'
                             type='text'
+                            placeholder='введите буквы'
                             style={{ width: '100%', maxWidth: '500px' }}
                             onChange={this.changeSymbolQuantity}
                         />
                         <span>Данный расчет не является публичной офертой и может отличаться.</span>
                     </div>
+
                     <div className='calc_example-cost'>
+                        <div className='calc_example-cost_title'>
+                            <span>Пример</span>
+                            <span>Описание</span>
+                            <span>Цена</span>
+                        </div>
+                        <div className='border'/>
                         {LetterCost.type.map((item, index) => (
                             <div className='calc_template-letter' key={index}>
                                 <img src={item.img} />

@@ -1,6 +1,5 @@
 import React from 'react';
 import './table.less';
-import Menu from './menu';
 
 export default class Table extends React.Component{
     constructor(props){

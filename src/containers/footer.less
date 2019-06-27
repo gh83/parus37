@@ -4,11 +4,76 @@
 
 .footer {
     .flex(row, space-around, center);
-    background-color: @color-4;
-    height: 80px;
+    background-color: @color-1;
+    // height: 80px;
 
-    span {
-        .font(Geometria-NarrowLight, 10px, 100, normal);
-        color: @color-3;
+    .footer_logo {
+        img {
+            display: block;
+            height: 70px;
+
+            @media screen and (max-width: 800px) {
+                display: none;
+            }
+        }
+    }
+
+    .footer_contacts {
+        .flex(column, center, flex-start);
+        width: 300px;
+        padding: 10px 0;
+
+        @media screen and (max-width: 600px) {
+            width: 200px;
+        }
+
+        i {
+            font-size: 15px;
+            color: @color-2;
+
+            @media screen and (max-width: 600px) {
+                font-size: 12px;
+            }
+        }
+
+        span {
+            font-size: 15px;
+            padding-left: 5px;
+            color: @color-3;
+
+            @media screen and (max-width: 600px) {
+                font-size: 12px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            padding-bottom: 5px;
+
+            &:hover {
+                span {
+                    color: @color-2
+                }
+            }
+        }
+
+        div {
+            .flex(row, center, center)
+        }
+    }
+
+    .footer_button-price {
+        button {
+            .flex(column, center, center);
+            width: 50px;
+            height: 50px;
+            font-size: 15px;
+
+            @media screen and (max-width: 600px) {
+                width: 40px;
+                height: 40px;
+                font-size: 12px;
+            }
+        }
     }
 }

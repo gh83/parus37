@@ -1,6 +1,5 @@
 import React from 'react';
 import './info-stand.less';
-import Menu from './menu';
 
 export default class InfoStand extends React.Component{
     constructor(props){
