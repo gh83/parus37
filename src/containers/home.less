@@ -4,7 +4,7 @@
 // .font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
 
 .banner {
-    background: url('../assets/img/header_bg.jpg');
+    background: url('../assets/img/header_bg_ship.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -40,43 +40,57 @@
 
         @media screen and (max-width: 570px) {
             .flex(column, flex-start, stretch);
+
+            .text {
+                padding: 0 30px;
+            }
         }
 
         .text {
             .flex(column, flex-start, center);
-            width: 30%;
-            min-width: 300px;
+            padding-right: 30px;
+            // width: 30%;
+            // min-width: 300px;
 
-            @media screen and (max-width: 900px) {
-                width: 30%;
-                min-width: 250px;
-            }
+            // @media screen and (max-width: 900px) {
+            //     width: 30%;
+            //     min-width: 250px;
+            // }
 
-            @media screen and (max-width: 730px) {
-                width: 30%;
-                min-width: 200px;
-            }
+            // @media screen and (max-width: 730px) {
+            //     width: 30%;
+            //     min-width: 200px;
+            // }
 
-            @media screen and (max-width: 674px) {
-                width: 30%;
-                min-width: 250px;
-            }
+            // @media screen and (max-width: 674px) {
+            //     width: 30%;
+            //     min-width: 250px;
+            // }
 
-            @media screen and (max-width: 570px) {
-                width: 100%
-            }
+            // @media screen and (max-width: 570px) {
+            //     width: 100%
+            // }
+            >a {
+                text-decoration: none;
+                color: @color-4;
+                transition: color linear .2s;
 
-            h1 {
-                // .font(Geometria-NarrowLight, 30px, 100, normal);
-                // text-transform: uppercase;
-                text-align: center;
-
-                @media screen and (max-width: 950px) {
-                    font-size: 20px;
+                &:hover {
+                    color: @color-2;
                 }
 
-                @media screen and (max-width: 600px) {
-                    font-size: 15px;
+                h1 {
+                    // .font(Geometria-NarrowLight, 30px, 100, normal);
+                    // text-transform: uppercase;
+                    text-align: center;
+
+                    @media screen and (max-width: 950px) {
+                        font-size: 20px;
+                    }
+
+                    @media screen and (max-width: 600px) {
+                        font-size: 15px;
+                    }
                 }
             }
 
@@ -104,7 +118,8 @@
                 text-decoration: none;
 
                 .image {
-                    .flex(row, center, flex-end);
+                    // .flex(row, center, flex-end);
+                    display: block;
                     margin-left: 5px;
                     margin-bottom: 5px;
                     background-position: center !important;
@@ -131,15 +146,15 @@
                         // }
                     }
 
-                    @media screen and (max-width: 978px) {
-                        width: 170px;
-                        height: 170px;
-                    }
+                    // @media screen and (max-width: 978px) {
+                    //     width: 170px;
+                    //     height: 170px;
+                    // }
 
-                    @media screen and (max-width: 850px) {
-                        width: 150px;
-                        height: 150px;
-                    }
+                    // @media screen and (max-width: 850px) {
+                    //     width: 150px;
+                    //     height: 150px;
+                    // }
 
                     // .image_label {
                     //     .font(Geometria-NarrowLight, 30px, 100, normal);
@@ -178,6 +193,10 @@
     .container_right-text {
         @media screen and (max-width: 570px) {
             .flex(column-reverse, flex-end, stretch);
+        }
+
+        .text {
+            padding-left: 30px;
         }
 
         .image-container {

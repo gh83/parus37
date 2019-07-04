@@ -35,7 +35,7 @@ export default class ArrowBegin extends React.Component {
         const delay = .0001;
         let timerScroll = setTimeout(function go() {
             if (i > 0) setTimeout(go, delay);
-            i = i - 10;
+            i = i - 20;
             window.scrollTo(0, i);
         }, delay);
     };

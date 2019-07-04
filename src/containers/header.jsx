@@ -20,7 +20,7 @@ export default class Header extends React.Component {
                 <div>
                     <NavLink to='/'>
                         <div className='logo'>
-                            <img src='../assets/img/logo.jpg' />
+                            <img src='../assets/img/logo-without-back.png' />
                             <i className="fa fa-home" aria-hidden="true" />
                         </div>
                     </NavLink>
@@ -38,7 +38,7 @@ export default class Header extends React.Component {
                         </div>
                         <div>
                             <i className="fa fa-envelope-o" aria-hidden="true" />
-                            <a href='mailto:parus37@inbox.ru'>parus37@inbox.ru</a>
+                            <a href='mailto:parus37@inbox.ru'>Parus37@inbox.ru</a>
                         </div>
                     </div>
                     <SocialIcons />

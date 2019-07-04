@@ -21,7 +21,7 @@ export default class Footer extends React.Component {
                     </a>
                     <a href='mailto:parus37@inbox.ru'>
                         <i className="fa fa-envelope-o" aria-hidden="true" />
-                        <span>parus37@inbox.ru</span>
+                        <span>Parus37@inbox.ru</span>
                     </a>
                     <div>
                         <i className="fa fa-map-marker" aria-hidden="true" />

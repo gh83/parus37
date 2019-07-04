@@ -1,12 +1,12 @@
 import React from 'react';
 import './letter.less';
-import { LetterCost } from '../../data/cost';
+import { LetterCost } from '../../data/letter-cost';
 
 export default class Letter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            letterSize: 1,
+            letterSize: 50,
             letterStyle: null,
             symbolQuantity: null,
         };
@@ -29,7 +29,7 @@ export default class Letter extends React.Component {
 
     render() {
         const { letterSize, letterStyle, symbolQuantity } = this.state;
-        let cost = Math.round(LetterCost.size * letterSize * letterStyle * symbolQuantity);
+        let cost = Math.round(letterSize * letterStyle * symbolQuantity);
 
         return (
             <div className='letter'>
@@ -40,9 +40,9 @@ export default class Letter extends React.Component {
                             <input
                                 className='input-y'
                                 type="range"
-                                min=".15"
-                                max="12"
-                                step='.05'
+                                min="10"
+                                max="100"
+                                step='10'
                                 onChange={this.changeSizeLetter}
                                 value={letterSize}
                             />
@@ -53,7 +53,7 @@ export default class Letter extends React.Component {
                                     value={letterSize}
                                     onChange={this.changeSizeLetter}
                                 />
-                                <div>m</div>
+                                <div>cm</div>
                             </div>
                             <div className='calc-banner' />
                         </div>
@@ -89,7 +89,7 @@ export default class Letter extends React.Component {
                             style={{ width: '100%', maxWidth: '500px' }}
                             onChange={this.changeSymbolQuantity}
                         />
-                        <span>Данный расчет не является публичной офертой и может отличаться.</span>
+                        <span>Данный расчет не является публичной офертой и может отличаться от конечной стоимости.</span>
                     </div>
 
                     <div className='calc_example-cost'>
