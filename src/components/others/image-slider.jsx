@@ -5,6 +5,8 @@ export default class ImageSlider extends React.Component {
     constructor(props) {
         super(props);
 
+        this.timerID = undefined;
+
         this.state = {
             images: [
                 "../assets/img/site/info-stand-1.jpg",
@@ -18,46 +20,42 @@ export default class ImageSlider extends React.Component {
                 "../assets/img/site/nameplate-2.jpg",
                 "../assets/img/site/nameplate-3.jpg",
             ],
-            settings: {}
+            currentImageNumber: 0
         }
-    }
-
-    randomInteger(min, max) {
-        let rand = min - 0.5 + Math.random() * (max - min + 1)
-        rand = Math.round(rand);
-        return rand;
     };
 
-    slideImage(){
-        return 
-    }
+    componentDidMount() {
+        this.timerID = setInterval(() => {
+            const { currentImageNumber, images } = this.state;
+            let newNumber = currentImageNumber + 1;
+            newNumber = (newNumber < images.length) ? newNumber : 0
+            this.setState({ currentImageNumber: newNumber });
+        }, 3000);
+    };
+
+    slideImage(currentImageNumber) {
+        clearInterval(this.timerID);
+        this.setState({ currentImageNumber });
+    };
 
     render() {
-        const { images, settings } = this.state;
-
-        const Slide = ({ image }) => {
-            const styles = {
-                backgroundImage: `url(${image})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: '50% 60%'
-            }
-            return <div className="slide" style={styles}></div>
-        }
-
+        const { images, settings, currentImageNumber } = this.state;
         return (
             <div className='galary'>
                 <h2>Наши работы</h2>
-                <div>
-                    {/* {setInterval(() => (
-                        <img src={`${images[this.randomInteger(0,9)]}`} />
-                    ),3000)} */}
-
-                    {/* <img src={{setInterval(() => {
-                        images[this.randomInteger(0,9)]
-                    }, interval);}} /> */}
-
-                    <Slide />
+                <div className="slider">
+                    <div className='imgs'>
+                        {images.map((item, key) => (
+                            <div key={key} className={`img ${(currentImageNumber === key) ? 'active' : ''}`}>
+                                <img alt={`slide-${key}`} src={item} />
+                            </div>
+                        ))}
+                    </div>
+                    <div className="buttons">
+                        {images.map((item, key) => (
+                            <div key={key} className={`button ${(currentImageNumber === key) ? 'active' : ''}`} onClick={e => this.slideImage(key)} />
+                        ))}
+                    </div>
                 </div>
             </div>
         );
