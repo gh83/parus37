@@ -4,10 +4,10 @@
 // .font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
 
 .banner {
-    background: url('../assets/img/header_bg_ship.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    // background: url('../assets/img/header_bg_ship.jpg');
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
     max-height: 500px;
@@ -206,5 +206,29 @@
                 .flex(row, center, flex-start);
             }
         }
+    }
+}
+
+.our-works {
+    .flex(column, center, center);
+
+    >a {
+        text-decoration: none;
+        color: @color-4;
+        transition: color linear .2s;
+
+        &:hover {
+            color: @color-2;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 30px;
+        }
+    }
+
+    .sliders-container {
+        .flex(row, center, flex-start);
+        flex-wrap: wrap;
     }
 }

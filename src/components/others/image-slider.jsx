@@ -6,31 +6,31 @@ export default class ImageSlider extends React.Component {
         super(props);
 
         this.timerID = undefined;
+        this.timer = this.props.timer;
 
         this.state = {
-            images: [
-                "../assets/img/site/info-stand-1.jpg",
-                "../assets/img/site/letter-1.jpg",
-                "../assets/img/site/nameplate-5.jpg",
-                "../assets/img/site/sticker-1.jpg",
-                "../assets/img/site/info-stand-1.jpg",
-                "../assets/img/site/info-stand-2.jpg",
-                "../assets/img/site/info-stand-3.jpg",
-                "../assets/img/site/nameplate-1.jpg",
-                "../assets/img/site/nameplate-2.jpg",
-                "../assets/img/site/nameplate-3.jpg",
-            ],
             currentImageNumber: 0
         }
     };
 
     componentDidMount() {
         this.timerID = setInterval(() => {
-            const { currentImageNumber, images } = this.state;
+            const { currentImageNumber } = this.state;
+            const { images } = this.props;
             let newNumber = currentImageNumber + 1;
             newNumber = (newNumber < images.length) ? newNumber : 0
             this.setState({ currentImageNumber: newNumber });
-        }, 3000);
+        }, this.timer);
+    };
+
+    changeImageButton(index) {
+        clearInterval(this.timerID);
+        const { images } = this.props;
+        const { currentImageNumber } = this.state;
+        let newNumber = currentImageNumber + index;
+        if (newNumber > images.length - 1) { newNumber = 0 };
+        if (newNumber < 0) { newNumber = images.length - 1 };
+        this.setState({ currentImageNumber: newNumber });
     };
 
     slideImage(currentImageNumber) {
@@ -39,15 +39,21 @@ export default class ImageSlider extends React.Component {
     };
 
     render() {
-        const { images, settings, currentImageNumber } = this.state;
+        const { currentImageNumber } = this.state;
+        const { images, height, width, style } = this.props;
         return (
-            <div className='galary'>
-                <h2>Наши работы</h2>
-                <div className="slider">
+            <div className='galary' style={{ width: width}}>
+                <div className="slider" style={{ height: height }}>
                     <div className='imgs'>
+                        <div className='prev-img' onClick={() => this.changeImageButton(-1)} >
+                            <i className="fa fa-angle-left" aria-hidden="true" />
+                        </div>
+                        <div className='next-img' onClick={() => this.changeImageButton(1)} >
+                            <i className="fa fa-angle-right" aria-hidden="true" />
+                        </div>
                         {images.map((item, key) => (
                             <div key={key} className={`img ${(currentImageNumber === key) ? 'active' : ''}`}>
-                                <img alt={`slide-${key}`} src={item} />
+                                <img alt={`slide-${key}`} style={style} src={item} />
                             </div>
                         ))}
                     </div>
