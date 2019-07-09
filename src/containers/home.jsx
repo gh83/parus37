@@ -36,7 +36,7 @@ export default class Home extends React.Component {
                                 to='/letter'
                                 data-balloon-length="medium"
                                 data-balloon="3d буквы. Размер от 15см до 12м. Материал пластик, стекло, вибраниум. Нажмите, чтобы выбрать"
-                                data-balloon-pos="right"
+                                data-balloon-pos="bottom"
                             >
                                 <h1>Объемные буквы</h1>
                             </NavLink>
@@ -49,7 +49,7 @@ export default class Home extends React.Component {
                                 to='/letter'
                                 data-balloon-length="medium"
                                 data-balloon="3d буквы. Размер от 15см до 12м. Материал пластик, стекло, вибраниум. Нажмите, чтобы выбрать"
-                                data-balloon-pos="left"
+                                data-balloon-pos="bottom"
                             >
                                 <div className='image' style={{ background: `url(../assets/img/site/letter-1.jpg)` }} />
                             </NavLink>

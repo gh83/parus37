@@ -212,6 +212,11 @@
 .our-works {
     .flex(column, center, center);
 
+    @media screen and (max-width: 450px) {
+        display: none;
+    }
+
+
     >a {
         text-decoration: none;
         color: @color-4;
