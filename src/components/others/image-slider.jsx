@@ -6,7 +6,6 @@ export default class ImageSlider extends React.Component {
         super(props);
 
         this.timerID = undefined;
-        this.timer = this.props.timer;
 
         this.state = {
             currentImageNumber: 0
@@ -20,7 +19,11 @@ export default class ImageSlider extends React.Component {
             let newNumber = currentImageNumber + 1;
             newNumber = (newNumber < images.length) ? newNumber : 0
             this.setState({ currentImageNumber: newNumber });
-        }, this.timer);
+        }, this.props.timer);
+    };
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
     };
 
     changeImageButton(index) {
@@ -42,7 +45,7 @@ export default class ImageSlider extends React.Component {
         const { currentImageNumber } = this.state;
         const { images, height, width, style } = this.props;
         return (
-            <div className='galary' style={{ width: width}}>
+            <div className='galary' style={{ width: width }}>
                 <div className="slider" style={{ height: height }}>
                     <div className='imgs'>
                         <div className='prev-img' onClick={() => this.changeImageButton(-1)} >

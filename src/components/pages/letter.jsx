@@ -1,6 +1,8 @@
 import React from 'react';
 import './letter.less';
 import { LetterCost } from '../../data/letter-cost';
+import FormFeedBack from '../ui/form';
+import Backdrop from '../ui/backdrop';
 
 export default class Letter extends React.Component {
     constructor(props) {
@@ -9,6 +11,7 @@ export default class Letter extends React.Component {
             letterSize: 50,
             letterStyle: null,
             symbolQuantity: null,
+            showForm: undefined
         };
         this.changeSizeLetter = e => this.setState({ letterSize: e.target.value });
         this.changeSymbolQuantity = e => this.setState({ symbolQuantity: (e.target.value).replace(/ /g, '').length });
@@ -18,22 +21,16 @@ export default class Letter extends React.Component {
         if (style == 'simple') { this.setState({ letterStyle: LetterCost.style.simple }) };
         if (style == 'notsimple') { this.setState({ letterStyle: LetterCost.style.notSimple }) };
         if (style == 'italic') { this.setState({ letterStyle: LetterCost.style.italic }) };
-
-        // switch (style) {
-        //     case 'simple': this.setState({ letterStyle: LetterCost.style.simple });
-        //     case 'notsimple': this.setState({ letterStyle: LetterCost.style.notSimple });
-        //     case 'italic': this.setState({ letterStyle: LetterCost.style.italic });
-        //     default: break;}
     };
 
 
     render() {
-        const { letterSize, letterStyle, symbolQuantity } = this.state;
-        let cost = Math.round(letterSize * letterStyle * symbolQuantity);
+        const { letterSize, letterStyle, symbolQuantity, showForm } = this.state;
+        const cost = Math.round(letterSize * letterStyle * symbolQuantity);
 
         return (
             <div className='letter'>
-                
+
                 <div className='calc'>
                     <div className='calc_size-letter'>
                         <div className='slider-y'>
@@ -98,7 +95,7 @@ export default class Letter extends React.Component {
                             <span>Описание</span>
                             <span>Цена</span>
                         </div>
-                        <div className='border'/>
+                        <div className='border' />
                         {LetterCost.type.map((item, index) => (
                             <div className='calc_template-letter' key={index}>
                                 <img src={item.img} />
@@ -111,7 +108,22 @@ export default class Letter extends React.Component {
                                     </ul>
                                 </div>
                                 <div className='calc_template-letter_cost'>
-                                    <button className='global-button'>заказать</button>
+                                    <button
+                                        onClick={e => this.setState({ showForm: index })}
+                                        className='global-button'>
+                                        заказать
+                                    </button>
+                                    {
+                                        (showForm === index)
+                                            ? <>
+                                                <Backdrop onClick={e => this.setState({ showForm: undefined })} />
+                                                <FormFeedBack
+                                                    onClose={e => this.setState({ showForm: undefined })}
+
+                                                />
+                                            </>
+                                            : null
+                                    }
                                     <div>
                                         <span>от&nbsp;</span>
                                         {item.cost * cost}

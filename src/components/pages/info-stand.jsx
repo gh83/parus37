@@ -1,16 +1,18 @@
 import React from 'react';
 import './info-stand.less';
+import FormFeedBack from '../ui/form';
+import Backdrop from '../ui/backdrop';
 
-export default class InfoStand extends React.Component{
-    constructor(props){
+export default class InfoStand extends React.Component {
+    constructor(props) {
         super(props);
     };
 
-    render(){
-        return(
+    render() {
+        return (
             <div className='info-stand'>
-              
-                <div>инфа, картинки и цены про про стэнды</div>
+                <Backdrop />
+                <FormFeedBack />
             </div>
         )
     }
