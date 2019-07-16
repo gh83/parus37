@@ -1,8 +1,8 @@
 import React from 'react';
 import './input.less';
 
-function isInvalid() {
-    return true;
+function isInvalid({valid, touched, shouldValidate}) {
+    return !valid && touched && shouldValidate;
 };
 
 const Input = props => {
@@ -15,11 +15,11 @@ const Input = props => {
     };
 
     return (
-        < div className={classList.join(' ')} >
+        < div className={classList.join(' ')} style={props.styleDiv}>
             <label htmlFor={htmlFor}>{props.label}</label>
             <input
                 className='input-text'
-                style={{ width: '100%' }}
+                style={props.style}
                 type={inputType}
                 id={htmlFor}
                 autoFocus={props.autoFocus}
@@ -27,7 +27,7 @@ const Input = props => {
                 onChange={props.onChange}
             />
             {
-                isInvalid()
+                isInvalid(props)
                     ? <span>{props.errorMessage || 'Введите верное значение'}</span>
                     : null
             }

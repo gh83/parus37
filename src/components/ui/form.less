@@ -1,15 +1,34 @@
 @import '../../styles/index.less';
 
-.form-feedback{
-    .flex(column, center, center) !important;
+.form-feedback {
     position: fixed;
-    top: 100px;
-    width: 320px;
-    height: 400px;
-    z-index: 100;
-    background-color: @color-3;
-    transform: translateX(-50%);
+    transform: translatex(-50%);
+    top: 50px;
     left: 50%;
-    border-radius: 4px;
-    padding: 10px;
+    padding: 20px 10px;
+    z-index: 100;
+    form {
+        .flex(column, flex-start, center) !important;
+        position: absolute;
+        // top: -200px;
+        border-radius: 4px;
+        z-index: 110;
+        background-color: @color-3;
+        transform: translateX(-50%);
+        left: 50%;
+        border-radius: 4px;
+        padding: 20px 10px;
+
+        textarea {
+            width: 300px;
+            height: 100px;
+        }
+
+        .modal-buttons {
+            >button {
+                margin-left: 25px;
+                margin-top: 20px;
+            }
+        }
+    }
 }

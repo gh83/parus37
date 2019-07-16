@@ -7,25 +7,57 @@ import Backdrop from '../ui/backdrop';
 export default class Letter extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
+            isLetterStyleSelect: false,
+            isSymbolInput: false,
             letterSize: 50,
             letterStyle: null,
             symbolQuantity: null,
             showForm: undefined
         };
         this.changeSizeLetter = e => this.setState({ letterSize: e.target.value });
-        this.changeSymbolQuantity = e => this.setState({ symbolQuantity: (e.target.value).replace(/ /g, '').length });
+
+        this.changeSymbolQuantity = e => {
+            let symbolQuantity = this.state.symbolQuantity;
+            let isSymbolInput = this.state.isSymbolInput;
+
+            symbolQuantity = e.target.value.replace(/ /g, '').length;
+
+            if (symbolQuantity > 0) {
+                isSymbolInput = true;
+            } else {
+                isSymbolInput = false;
+            };
+
+            this.setState({ symbolQuantity, isSymbolInput });
+        };
     };
 
     changeStyleLetter = style => {
-        if (style == 'simple') { this.setState({ letterStyle: LetterCost.style.simple }) };
-        if (style == 'notsimple') { this.setState({ letterStyle: LetterCost.style.notSimple }) };
-        if (style == 'italic') { this.setState({ letterStyle: LetterCost.style.italic }) };
+        if (style == 'simple') {
+            this.setState({
+                letterStyle: LetterCost.style.simple,
+                isLetterStyleSelect: true
+            })
+        };
+        if (style == 'notsimple') {
+            this.setState({
+                letterStyle: LetterCost.style.notSimple,
+                isLetterStyleSelect: true
+            })
+        };
+        if (style == 'italic') {
+            this.setState({
+                letterStyle: LetterCost.style.italic,
+                isLetterStyleSelect: true
+            })
+        };
     };
 
 
     render() {
-        const { letterSize, letterStyle, symbolQuantity, showForm } = this.state;
+        const { letterSize, letterStyle, symbolQuantity, showForm, isSymbolInput, isLetterStyleSelect } = this.state;
         const cost = Math.round(letterSize * letterStyle * symbolQuantity);
 
         return (
@@ -98,6 +130,17 @@ export default class Letter extends React.Component {
                         <div className='border' />
                         {LetterCost.type.map((item, index) => (
                             <div className='calc_template-letter' key={index}>
+                                {
+                                    (showForm === index)
+                                        ? <>
+                                            <Backdrop onClick={e => this.setState({ showForm: undefined })} />
+                                            <FormFeedBack
+                                                onClose={e => this.setState({ showForm: undefined })}
+                                                order={item.title}
+                                            />
+                                        </>
+                                        : null
+                                }
                                 <img src={item.img} />
                                 <div className='calc_template-letter_about'>
                                     <span>{item.title}</span>
@@ -110,20 +153,11 @@ export default class Letter extends React.Component {
                                 <div className='calc_template-letter_cost'>
                                     <button
                                         onClick={e => this.setState({ showForm: index })}
-                                        className='global-button'>
+                                        className='global-button'
+                                        disabled={!(isSymbolInput && isLetterStyleSelect)}
+                                    >
                                         заказать
                                     </button>
-                                    {
-                                        (showForm === index)
-                                            ? <>
-                                                <Backdrop onClick={e => this.setState({ showForm: undefined })} />
-                                                <FormFeedBack
-                                                    onClose={e => this.setState({ showForm: undefined })}
-
-                                                />
-                                            </>
-                                            : null
-                                    }
                                     <div>
                                         <span>от&nbsp;</span>
                                         {item.cost * cost}
