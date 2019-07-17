@@ -1,8 +1,17 @@
 export const LetterCost = {
     style: {
-        simple: 70,
-        notSimple: 80,
-        italic: 90
+        simple: {
+            cost: 70,
+            name: 'Простой шрифт'
+        },
+        notSimple: {
+            cost: 80,
+            name: 'Шрифт с засечками'
+        },
+        italic: {
+            cost: 90,
+            name: 'Прописной шрифт'
+        }
     },
     type: [{
             cost: 1,

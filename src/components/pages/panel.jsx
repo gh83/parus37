@@ -1,13 +1,16 @@
 import React from 'react';
 import './panel.less';
-import {PanelCost} from '../../data/panel-cost';
+import { PanelCost } from '../../data/panel-cost';
+import FormFeedBack from '../ui/form';
+import Backdrop from '../ui/backdrop';
 
-export default class Panel extends React.Component{
-    constructor(props){
+export default class Panel extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             panelHeight: 1,
-            panelWidth: 1
+            panelWidth: 1,
+            showForm: undefined
         };
 
         this.changePanelHeight = e => this.setState({ panelHeight: e.target.value });
@@ -20,8 +23,17 @@ export default class Panel extends React.Component{
         return rand;
     }
 
+    order(cost, height, width, title){
+        return (
+            'Панель кронштейн' + '\n' +
+            'высота: ' + height + ' m,' + ' ширина: ' + width + ' m' + '\n' +
+            'материал: ' + title + '\n' +
+            'цена от: ' + cost + ' руб'
+        );
+    };
+
     render() {
-        const { panelHeight, panelWidth } = this.state;
+        const { panelHeight, panelWidth, showForm } = this.state;
         return (
             <div className='panel'>
                 <div className='panel_calc'>
@@ -71,21 +83,37 @@ export default class Panel extends React.Component{
                     <div className='panel_calc_template-cost'>
                         <div className='panel_calc_template-title'>
                             <span>Пример</span>
-                            <span/>
-                            <span/>
+                            <span />
+                            <span />
                             <span>Описание</span>
-                            <span/>
+                            <span />
                             <span>Цена</span>
                         </div>
                         <div className='border' />
                         {PanelCost.type.map((item, index) => (
                             <div key={index} className='panel_calc_template'>
+                                {
+                                    showForm == index
+                                        ? <>
+                                            <Backdrop onClick={e => this.setState({ showForm: undefined })} />
+                                            <FormFeedBack
+                                                onClose={e => this.setState({ showForm: undefined })}
+                                                order={this.order(Math.round(item.cost * panelHeight * panelWidth), panelHeight, panelWidth, item.title)}
+                                            />
+                                        </>
+                                        : null
+                                }
                                 <img src={`http://lorempixel.com/25${this.randomInteger(0, 9)}/15${this.randomInteger(0, 9)}`} />
                                 <div className='about-title'>
                                     {item.title}
                                 </div>
                                 <div className='calc_template-panel_cost'>
-                                    <button className='global-button'>заказать</button>
+                                    <button
+                                        className='global-button'
+                                        onClick={e => this.setState({ showForm: index })}
+                                    >
+                                        заказать
+                                    </button>
                                     <div>
                                         <span>от&nbsp;</span>
                                         {Math.round(item.cost * panelHeight * panelWidth)}

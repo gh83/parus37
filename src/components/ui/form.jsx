@@ -46,7 +46,7 @@ export default class FormFeedBack extends React.Component {
                     type: 'tel',
                     label: 'Телефон для связи',
                     style: { width: '300px' },
-                    styleDiv: { height: '60px' },
+                    styleDiv: { height: '60px', marginBottom: '15px' },
                     errorMessage: 'введите телефон для связи',
                     valid: true,
                     touched: false,
@@ -119,6 +119,8 @@ export default class FormFeedBack extends React.Component {
 
     render() {
         const { onClose } = this.props;
+        const htmlFor = `${Math.random()}`;
+
 
         return (
             <div className='form-feedback'>
@@ -128,9 +130,10 @@ export default class FormFeedBack extends React.Component {
                     {
                         this.props.order
                             ? <div className='modal_textarea'>
-                                <label />
+                                <label htmlFor={htmlFor+1}>Ваш заказ</label>
                                 <textarea
                                     className='input-text'
+                                    htmlFor={htmlFor+1}
                                     disabled
                                     value={this.props.order}
                                 />
@@ -139,12 +142,14 @@ export default class FormFeedBack extends React.Component {
                     }
 
                     <div className='modal_textarea'>
-                        <label />
+                        <label htmlFor={htmlFor}>Сообщение</label>
                         <textarea
                             className='input-text'
+                            id={htmlFor}
                             maxLength='200'
                             onChange={e => this.setState({ messageText: e.target.value })}
                         />
+                        <span>Не более 200 символов</span>
                     </div>
                     <div className='modal-buttons'>
                         <button

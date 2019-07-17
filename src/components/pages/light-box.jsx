@@ -1,6 +1,8 @@
 import React from 'react';
 import './light-box.less';
 import { LightBoxCost } from '../../data/light-box-cost';
+import FormFeedBack from '../ui/form';
+import Backdrop from '../ui/backdrop';
 
 export default class LightBox extends React.Component {
     constructor(props) {
@@ -8,7 +10,8 @@ export default class LightBox extends React.Component {
 
         this.state = {
             lightBoxHeight: 1,
-            lightBoxWidth: 1
+            lightBoxWidth: 1,
+            showForm: undefined
         };
 
         this.changeLightBoxHeight = e => this.setState({ lightBoxHeight: e.target.value });
@@ -21,8 +24,17 @@ export default class LightBox extends React.Component {
         return rand;
     }
 
+    order(cost, height, width, title) {
+        return (
+            'Световой короб' + '\n' +
+            'высота: ' + height + ' m,' + ' ширина: ' + width + ' m' + '\n' +
+            'материал: ' + title + '\n' +
+            'цена от: ' + cost + ' руб'
+        );
+    };
+
     render() {
-        const { lightBoxHeight, lightBoxWidth } = this.state;
+        const { lightBoxHeight, lightBoxWidth, showForm } = this.state;
         return (
             <div className='light-box'>
                 <div className='light-box_calc'>
@@ -72,21 +84,37 @@ export default class LightBox extends React.Component {
                     <div className='light-box_calc_template-cost'>
                         <div className='light-box_calc_template-title'>
                             <span>Пример</span>
-                            <span/>
-                            <span/>
+                            <span />
+                            <span />
                             <span>Описание</span>
-                            <span/>
+                            <span />
                             <span>Цена</span>
                         </div>
                         <div className='border' />
                         {LightBoxCost.type.map((item, index) => (
                             <div key={index} className='light-box_calc_template'>
+                                {
+                                    showForm == index
+                                        ? <>
+                                            <Backdrop onClick={e => this.setState({ showForm: undefined })} />
+                                            <FormFeedBack
+                                                onClose={e => this.setState({ showForm: undefined })}
+                                                order={this.order(Math.round(item.cost * lightBoxHeight * lightBoxWidth), lightBoxHeight, lightBoxWidth, item.title)}
+                                            />
+                                        </>
+                                        : null
+                                }
                                 <img src={`http://lorempixel.com/25${this.randomInteger(0, 9)}/15${this.randomInteger(0, 9)}`} />
                                 <div className='about-title'>
                                     {item.title}
                                 </div>
                                 <div className='calc_template-light-box_cost'>
-                                    <button className='global-button'>заказать</button>
+                                    <button
+                                        className='global-button'
+                                        onClick={e => this.setState({ showForm: index })}
+                                    >
+                                        заказать
+                                    </button>
                                     <div>
                                         <span>от&nbsp;</span>
                                         {Math.round(item.cost * lightBoxHeight * lightBoxWidth)}

@@ -12,7 +12,9 @@ export default class Letter extends React.Component {
             isLetterStyleSelect: false,
             isSymbolInput: false,
             letterSize: 50,
+            letterStylePrice: null,
             letterStyle: null,
+            orderString: '',
             symbolQuantity: null,
             showForm: undefined
         };
@@ -21,8 +23,10 @@ export default class Letter extends React.Component {
         this.changeSymbolQuantity = e => {
             let symbolQuantity = this.state.symbolQuantity;
             let isSymbolInput = this.state.isSymbolInput;
+            let orderString = this.state.orderString;
 
-            symbolQuantity = e.target.value.replace(/ /g, '').length;
+            orderString = e.target.value;
+            symbolQuantity = orderString.replace(/ /g, '').length;
 
             if (symbolQuantity > 0) {
                 isSymbolInput = true;
@@ -30,35 +34,50 @@ export default class Letter extends React.Component {
                 isSymbolInput = false;
             };
 
-            this.setState({ symbolQuantity, isSymbolInput });
+            this.setState({ symbolQuantity, isSymbolInput, orderString });
         };
     };
 
     changeStyleLetter = style => {
         if (style == 'simple') {
             this.setState({
-                letterStyle: LetterCost.style.simple,
+                letterStylePrice: LetterCost.style.simple.cost,
+                letterStyle: LetterCost.style.simple.name,
                 isLetterStyleSelect: true
             })
         };
         if (style == 'notsimple') {
             this.setState({
-                letterStyle: LetterCost.style.notSimple,
+                letterStylePrice: LetterCost.style.notSimple.cost,
+                letterStyle: LetterCost.style.notSimple.name,
                 isLetterStyleSelect: true
             })
         };
         if (style == 'italic') {
             this.setState({
-                letterStyle: LetterCost.style.italic,
+                letterStylePrice: LetterCost.style.italic.cost,
+                letterStyle: LetterCost.style.italic.name,
                 isLetterStyleSelect: true
             })
         };
     };
 
+    order(cost, size, style, count, string, title) {
+        return (
+            'Объемные световые буквы' + '\n'
+            + 'Надпись: ' + string + '\n'
+            + 'количество символов: ' + count + '  Размер: ' + size + ' cm' + '\n'
+            + 'Стиль: ' + style + '\n'
+            + title + '\n'
+            + 'цена: от ' + cost + ' руб'
+        );
+
+    };
+
 
     render() {
-        const { letterSize, letterStyle, symbolQuantity, showForm, isSymbolInput, isLetterStyleSelect } = this.state;
-        const cost = Math.round(letterSize * letterStyle * symbolQuantity);
+        const { letterSize, letterStyle, letterStylePrice, orderString, symbolQuantity, showForm, isSymbolInput, isLetterStyleSelect } = this.state;
+        const cost = Math.round(letterSize * letterStylePrice * symbolQuantity);
 
         return (
             <div className='letter'>
@@ -89,21 +108,21 @@ export default class Letter extends React.Component {
                         <div className='calc_letter-select'>
                             <div
                                 onClick={this.changeStyleLetter.bind(this, 'simple')}
-                                className={letterStyle == LetterCost.style.simple ? 'active' : ''}
+                                className={letterStyle == LetterCost.style.simple.name ? 'active' : ''}
                             >
                                 <span>R</span>
                                 <span>шрифт простой</span>
                             </div>
                             <div
                                 onClick={this.changeStyleLetter.bind(this, 'notsimple')}
-                                className={letterStyle == LetterCost.style.notSimple ? 'active' : ''}
+                                className={letterStyle == LetterCost.style.notSimple.name ? 'active' : ''}
                             >
                                 <span>R</span>
                                 <span>шрифт с засечками</span>
                             </div>
                             <div
                                 onClick={this.changeStyleLetter.bind(this, 'italic')}
-                                className={letterStyle == LetterCost.style.italic ? 'active' : ''}
+                                className={letterStyle == LetterCost.style.italic.name ? 'active' : ''}
                             >
                                 <span>R</span>
                                 <span>шрифт прописной</span>
@@ -136,7 +155,7 @@ export default class Letter extends React.Component {
                                             <Backdrop onClick={e => this.setState({ showForm: undefined })} />
                                             <FormFeedBack
                                                 onClose={e => this.setState({ showForm: undefined })}
-                                                order={item.title}
+                                                order={this.order(cost * item.cost, letterSize, letterStyle, symbolQuantity, orderString, item.title)}
                                             />
                                         </>
                                         : null
