@@ -1,10 +1,12 @@
 import React from 'react';
 import './form.less';
 import Input from '../ui/input';
+import axios from 'axios';
 
 function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    // var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // return re.test(String(email).toLowerCase());
+    return true;
 };
 
 export default class FormFeedBack extends React.Component {
@@ -12,8 +14,11 @@ export default class FormFeedBack extends React.Component {
         super(props);
 
         this.state = {
+            mailSend: false,
+            errorMailSend: '',
             isFormValid: false,
             messageText: '',
+            order: this.props.order || null,
             formControls: {
                 name: {
                     value: '',
@@ -115,6 +120,18 @@ export default class FormFeedBack extends React.Component {
 
     submitHandler = e => {
         e.preventDefault();
+        axios({
+            method: 'post',
+            url: 'http://localhost/send.php',
+            headers: { 'content-type': 'multipart/form-data' },
+            data: {
+                name: 'sdf',
+                email: 'sdf',
+                text: 'sdf'
+            }
+        })
+            .then(result => this.setState({ mailSend: result.data.sent }), console.log(result.data))
+            .catch(error => this.setState({ errorMailSend: error.message }));
     }
 
     render() {
@@ -130,10 +147,10 @@ export default class FormFeedBack extends React.Component {
                     {
                         this.props.order
                             ? <div className='modal_textarea'>
-                                <label htmlFor={htmlFor+1}>Ваш заказ</label>
+                                <label htmlFor={htmlFor + 1}>Ваш заказ</label>
                                 <textarea
                                     className='input-text'
-                                    htmlFor={htmlFor+1}
+                                    htmlFor={htmlFor + 1}
                                     disabled
                                     value={this.props.order}
                                 />
@@ -163,7 +180,7 @@ export default class FormFeedBack extends React.Component {
                             className='global-button'
                             type='submit'
                             disabled={!this.state.isFormValid}
-                            onClick={e => onClose && onClose(e)}
+                            onClick={e => this.submitHandler(e)}
                         >
                             Отправить
                     </button>

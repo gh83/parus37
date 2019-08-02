@@ -86,7 +86,10 @@ module.exports = {
     host: 'localhost',
     port: '3000',
     contentBase: path.join(__dirname, 'public'),
-    historyApiFallback: true
+    historyApiFallback: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
