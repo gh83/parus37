@@ -3,10 +3,11 @@
 .form-feedback {
     position: fixed;
     transform: translatex(-50%);
-    top: 20px;
+    top: 5px;
     left: 50%;
-    padding: 20px 10px;
+    padding: 0px 0px;
     z-index: 100;
+
     form {
         .flex(column, flex-start, center) !important;
         position: absolute;
@@ -17,18 +18,25 @@
         transform: translateX(-50%);
         left: 50%;
         border-radius: 4px;
-        padding: 20px 10px;
+        padding: 5px 10px;
+
+        label {
+            font-size: 13px;
+        }
 
         .modal_textarea {
-            .flex(column, flex-start,flex-start);
+            .flex(column, flex-start, flex-start);
             width: 300px;
             // height: 100px;
-            margin-bottom: 15px;
-            textarea{
+            margin-bottom: 5px;
+
+            textarea {
                 width: 100%;
-                height: 90px;
+                height: 60px;
+                font-size: 12px;
             }
-            span{
+
+            span {
                 font-size: 11px;
             }
         }

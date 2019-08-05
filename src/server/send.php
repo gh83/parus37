@@ -14,6 +14,8 @@ $_POST = json_decode($rest_json, true);
 $name = $_POST['name'];
 $email = $_POST['email'];
 $text = $_POST['text'];
+$phone = $_POST['phone'];
+$order = $_POST['order'];
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
 // echo "|$name|$email|$text|";
@@ -53,9 +55,11 @@ try {
         // -----------------------
         $mail->isHTML(true);
     
-        $mail->Subject = 'Заголовок письма';
+        $mail->Subject = 'Новый заказ';
         $mail->Body    = "<b>Имя:</b> $name <br>
         <b>Почта:</b> $email<br><br>
+        <b>Телефон:</b> $phone<br><br>
+        <b>Заказ:</b> <pre>$order</pre><br><br>
         <b>Сообщение:</b><br>$text";
 // Проверяем отравленность сообщения
 if ($mail->send()) {

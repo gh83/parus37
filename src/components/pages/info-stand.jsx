@@ -11,7 +11,7 @@ export default class InfoStand extends React.Component {
     render() {
         return (
             <div className='info-stand'>
-                
+                {/* <FormFeedBack/> */}
             </div>
         )
     }

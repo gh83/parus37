@@ -4,9 +4,9 @@ import Input from '../ui/input';
 import axios from 'axios';
 
 function validateEmail(email) {
-    // var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    // return re.test(String(email).toLowerCase());
-    return true;
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+    // return true;
 };
 
 export default class FormFeedBack extends React.Component {
@@ -26,8 +26,8 @@ export default class FormFeedBack extends React.Component {
                     label: 'Ваше имя',
                     errorMessage: ' ',
                     autoFocus: false,
-                    style: { width: '300px' },
-                    styleDiv: { height: '60px' },
+                    // style: { width: '300px' },
+                    // styleDiv: { height: '60px' },
                     valid: true,
                     touched: false,
                 },
@@ -37,8 +37,8 @@ export default class FormFeedBack extends React.Component {
                     label: 'E-mail',
                     errorMessage: 'введите корректный e-mail',
                     autoFocus: true,
-                    style: { width: '300px' },
-                    styleDiv: { height: '60px' },
+                    // style: { width: '300px' },
+                    // styleDiv: { height: '60px' },
                     valid: false,
                     touched: false,
                     validation: {
@@ -50,8 +50,8 @@ export default class FormFeedBack extends React.Component {
                     value: '',
                     type: 'tel',
                     label: 'Телефон для связи',
-                    style: { width: '300px' },
-                    styleDiv: { height: '60px', marginBottom: '15px' },
+                    // style: { width: '300px' },
+                    // styleDiv: { height: '60px', marginBottom: '15px' },
                     errorMessage: 'введите телефон для связи',
                     valid: true,
                     touched: false,
@@ -125,12 +125,14 @@ export default class FormFeedBack extends React.Component {
             url: 'http://localhost/send.php',
             headers: { 'content-type': 'multipart/form-data' },
             data: {
-                name: 'sdf',
-                email: 'sdf',
-                text: 'sdf'
+                name: `${this.state.formControls.name.value}`,
+                phone: `${this.state.formControls.phone.value}`,
+                email: `${this.state.formControls.email.value}`,
+                text: `${this.state.messageText}`,
+                order: `${this.state.order}`,
             }
         })
-            .then(result => this.setState({ mailSend: result.data.sent }), console.log(result.data))
+            .then(result => this.setState({ mailSend: result.data.sent }))
             .catch(error => this.setState({ errorMailSend: error.message }));
     }
 
@@ -180,7 +182,7 @@ export default class FormFeedBack extends React.Component {
                             className='global-button'
                             type='submit'
                             disabled={!this.state.isFormValid}
-                            onClick={e => this.submitHandler(e)}
+                            onClick={e => {this.submitHandler(e); onClose && onClose(e)}}
                         >
                             Отправить
                     </button>
