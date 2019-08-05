@@ -1,6 +1,8 @@
 @import '../styles/index.less';
 
-.font-face(Geometria-NarrowLight, '../assets/fonts/Geometria-NarrowLight', 100, normal);
+// .font-face(Geometria-NarrowLight, '../assets/fonts/Geometria-NarrowLight', 100, normal);
+.font-face(Roboto-regular, '../assets/fonts/roboto/roboto-v20-cyrillic_latin-regular', 100, normal);
+
 
 .footer {
     .flex(row, space-around, center);
@@ -20,6 +22,8 @@
 
     .footer_contacts {
         .flex(column, center, flex-start);
+        .font(Roboto-regular, 20px, 100, normal);
+
         width: 300px;
         padding: 10px 0;
 

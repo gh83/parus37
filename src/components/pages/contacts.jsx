@@ -3,9 +3,9 @@ import './contacts.less';
 import { Map, Marker, MarkerLayout } from 'yandex-map-react';
 
 const points = [
-    [56.967291, 40.959661],
+    [57.013384, 40.947225]
 ];
-const center = [56.967291, 40.959661];
+const center = [57.013384, 40.947225];
 const markerStyles = {
     width: '40px',
     height: '40px',
@@ -33,13 +33,13 @@ const Contacts = props => (
                 </a>
                 <div>
                     <i className="fa fa-map-marker" aria-hidden="true" />
-                    <span>Адрес офиса: 153032, Россия, Иваново ул. Станкостроителей 10</span>
+                    <span>Адрес офиса: 153032, Россия, Иваново ул. Поляковой 8б</span>
                 </div>
             </div>
             <div className='contacts-page_time'>
                 <i className="fa fa-clock-o" aria-hidden="true" />
                 <div>
-                    <span>Будни: с 9-00 до 19-00</span>
+                    <span>Будни: с 8-00 до 18-00</span>
                     <span>Суббота: с 9-00 до 17-00</span>
                     <span>Воскресенье: с 9-00 до 15-00</span>
                 </div>

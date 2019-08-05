@@ -1,7 +1,9 @@
 @import '../../styles/index.less';
 
-.font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
-.font-face(Geometria-NarrowLight, '../assets/fonts/Geometria-NarrowLight', 100, normal);
+// .font-face(Geometria-Narrow, '../assets/fonts/Geometria-Narrow', 100, normal);
+// .font-face(Geometria-NarrowLight, '../assets/fonts/Geometria-NarrowLight', 100, normal);
+.font-face(Roboto-700, '../assets/fonts/roboto/roboto-v20-cyrillic_latin-700', 100, normal);
+.font-face(Roboto-regular, '../assets/fonts/roboto/roboto-v20-cyrillic_latin-regular', 100, normal);
 
 .letter {
     .flex(row, space-around, flex-start);
@@ -140,9 +142,9 @@
             align-self: center;
 
             >span {
-                // .font(Geometria-NarrowLight, 15px, 100, normal);
+                .font(Roboto-regular, 15px, 100, normal);
                 color: @color-4;
-                font-size: 10px;
+                font-size: 9px;
                 // text-transform: uppercase;
                 padding-top: 5px;
             }
@@ -156,6 +158,7 @@
             // .font(Geometria-Narrow, 15px, 100, normal);
             .calc_example-cost_title {
                 .flex(row, space-between, center);
+                .font(Roboto-regular, 18px, 100, normal);
                 padding: 20px 10px 0px 80px;
 
                 @media screen and (max-width: 800px) {
@@ -184,7 +187,7 @@
                     // padding-left: 20px;
 
                     >span {
-                        // .font(Geometria-NarrowLight, 20px, 100, normal);
+                        .font(Roboto-700, 20px, 100, normal);
                         // text-transform: uppercase;
                         padding-bottom: 10px;
                         font-weight: bold;
@@ -199,7 +202,7 @@
                     ul {
                         li {
 
-                            // .font(Geometria-Narrow, 15px, 100, normal);
+                            .font(Roboto-regular, 15px, 100, normal);
                             @media screen and (max-width: 650px) {
                                 font-size: 13px;
                             }

@@ -17,7 +17,7 @@ export default class Menu extends React.Component{
                 <NavLink activeClassName='active' to='/info-stand'><div>Информационные стенды</div></NavLink>
                 <NavLink activeClassName='active' to='/table'><div>Таблички</div></NavLink>
                 <NavLink activeClassName='active' to='/sticker'><div>Наклейки</div></NavLink>
-                <NavLink activeClassName='active' to='/galary'><div>Наши работы</div></NavLink>
+                {/* <NavLink activeClassName='active' to='/galary'><div>Наши работы</div></NavLink> */}
                 <NavLink activeClassName='active' to='/price'><div>Прайс</div></NavLink>
                 <NavLink activeClassName='active' to='/contacts'><div>Контакты</div></NavLink>
             </nav>
