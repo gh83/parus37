@@ -122,7 +122,7 @@ export default class FormFeedBack extends React.Component {
         e.preventDefault();
         axios({
             method: 'post',
-            url: 'http://localhost/send.php',
+            url: '/send.php',
             headers: { 'content-type': 'multipart/form-data' },
             data: {
                 name: `${this.state.formControls.name.value}`,

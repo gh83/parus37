@@ -51,7 +51,7 @@ export default class Home extends React.Component {
                                 data-balloon="3d буквы. Размер от 15см до 12м. Материал пластик, стекло, вибраниум. Нажмите, чтобы выбрать"
                                 data-balloon-pos="bottom"
                             >
-                                <div className='image' style={{ background: `url(../assets/img/site/letter-1.jpg)` }} />
+                                <div className='image' style={{ background: `url(/assets/img/site/letter-1.jpg)` }} />
                             </NavLink>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ export default class Home extends React.Component {
                                 data-balloon="Информационный стэнд. Размер от 15см до 12м. Материал пластик, стекло, вибраниум. Нажмите, чтобы выбрать"
                                 data-balloon-pos="up"
                             >
-                                <div className='image' style={{ background: `url(../assets/img/site/info-stand-3.jpg)` }} />
+                                <div className='image' style={{ background: `url(/assets/img/site/info-stand-3.jpg)` }} />
                             </NavLink>
                         </div>
                         <div className='text'>
@@ -171,7 +171,7 @@ export default class Home extends React.Component {
                                 data-balloon="Табличка. Размер от 15см до 12м. Материал пластик, стекло, вибраниум. Нажмите, чтобы выбрать"
                                 data-balloon-pos="up"
                             >
-                                <div className='image' style={{ background: `url(../assets/img/site/nameplate-3.jpg)` }} />
+                                <div className='image' style={{ background: `url(/assets/img/site/nameplate-3.jpg)` }} />
                             </NavLink>
                         </div>
                     </div>
@@ -188,7 +188,7 @@ export default class Home extends React.Component {
                                 data-balloon="Наклейка. Размер от 15см до 12м. Материал пластик, стекло, вибраниум. Нажмите, чтобы выбрать"
                                 data-balloon-pos="up"
                             >
-                                <div className='image' style={{ background: `url(../assets/img/site/sticker-1.jpg)` }} />
+                                <div className='image' style={{ background: `url(/assets/img/site/sticker-1.jpg)` }} />
                             </NavLink>
                         </div>
                         <div className='text'>
