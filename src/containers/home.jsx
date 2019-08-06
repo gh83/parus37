@@ -211,7 +211,7 @@ export default class Home extends React.Component {
                 <Advantages />
                 <div className='border' />
                 <div className='our-works'>
-                    <NavLink to='/galary'><h2>Наши работы</h2></NavLink>
+                    <h2>Наши работы</h2>
                     <div className='sliders-container'>
                         <ImageSlider
                             images={LettersImages.images}

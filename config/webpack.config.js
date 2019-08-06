@@ -51,7 +51,6 @@ module.exports = {
             //publicPath: 'assets',
             name: '[name].[ext]',
             outputPath: 'assets',
-
           }
         }
       },

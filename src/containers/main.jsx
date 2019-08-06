@@ -8,7 +8,7 @@ export default class Main extends React.Component{
 
     render(){
         return(
-            <main className='content-container'>
+            <main>
                 {this.props.children}
             </main>
         )

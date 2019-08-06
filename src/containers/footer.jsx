@@ -9,9 +9,9 @@ export default class Footer extends React.Component {
 
     render() {
         return (
-            <div className='footer'>
+            <footer>
                 <div className='footer_logo'>
-                    <img src='../assets/img/logo-without-back.png' />
+                    <img src='/assets/img/logo-without-back.png' />
                 </div>
 
                 <div className='footer_contacts'>
@@ -37,7 +37,7 @@ export default class Footer extends React.Component {
                 </div>
 
                 <SocialIcons />
-            </div>
+            </footer>
         )
     }
 }

@@ -1,13 +1,11 @@
-@import '../styles/index.less';
+@import '../styles/mixins.less';
+@import '../styles/variables.less';
 
-// .font-face(Geometria-NarrowLight, '/assets/fonts/Geometria-NarrowLight', 100, normal);
-.font-face(Roboto-regular, '/assets/fonts/roboto/roboto-v20-cyrillic_latin-regular', 100, normal);
-
-
-.footer {
+footer {
     .flex(row, space-around, center);
     background-color: lighten(@color-1, 45%);
-    // height: 80px;
+    min-height: 120px;
+    bottom: 0;
 
     .footer_logo {
         img {

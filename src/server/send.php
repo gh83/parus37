@@ -37,7 +37,7 @@ try {
     $mail->setFrom('mail@parus37.ru', 'mail@parus37.ru'); // Адрес самой почты и имя отправителя
     // Получатель письма
     $mail->addAddress('mail@parus37.ru');  
-    // $mail->addAddress('youremail@gmail.com'); // Ещё один, если нужен
+    $mail->addAddress('parus37@inbox.ru'); // Ещё один, если нужен
     // Прикрипление файлов к письму
 // if (!empty($_FILES['myfile']['name'][0])) {
 //     for ($ct = 0; $ct < count($_FILES['myfile']['tmp_name']); $ct++) {

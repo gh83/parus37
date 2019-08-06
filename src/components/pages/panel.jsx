@@ -1,8 +1,7 @@
 import React from 'react';
 import './panel.less';
 import { PanelCost } from '../../data/panel-cost';
-import FormFeedBack from '../ui/form';
-import Backdrop from '../ui/backdrop';
+import Modal from '../ui/modal';
 
 export default class Panel extends React.Component {
     constructor(props) {
@@ -23,7 +22,7 @@ export default class Panel extends React.Component {
         return rand;
     }
 
-    order(cost, height, width, title){
+    order(cost, height, width, title) {
         return (
             'Панель кронштейн' + '\n' +
             'высота: ' + height + ' m,' + ' ширина: ' + width + ' m' + '\n' +
@@ -95,8 +94,8 @@ export default class Panel extends React.Component {
                                 {
                                     showForm == index
                                         ? <>
-                                            <Backdrop onClick={e => this.setState({ showForm: undefined })} />
-                                            <FormFeedBack
+                                            <Modal
+                                                onClick={e => this.setState({ showForm: undefined })}
                                                 onClose={e => this.setState({ showForm: undefined })}
                                                 order={this.order(Math.round(item.cost * panelHeight * panelWidth), panelHeight, panelWidth, item.title)}
                                             />

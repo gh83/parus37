@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Layout from "./containers/layout";
 import Header from './containers/header';
 import Main from './containers/main';
 import Footer from './containers/footer';
@@ -23,7 +22,7 @@ export default class App extends React.Component {
   render() {
 
     return (
-      <Layout>
+      <>
         <Header />
         <Main>
           <Switch>
@@ -40,7 +39,7 @@ export default class App extends React.Component {
           </Switch>
         </Main>
         <Footer />
-      </Layout>
+      </>
     )
   }
 }

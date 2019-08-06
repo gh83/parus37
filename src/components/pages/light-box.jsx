@@ -1,8 +1,7 @@
 import React from 'react';
 import './light-box.less';
 import { LightBoxCost } from '../../data/light-box-cost';
-import FormFeedBack from '../ui/form';
-import Backdrop from '../ui/backdrop';
+import Modal from '../ui/modal';
 
 export default class LightBox extends React.Component {
     constructor(props) {
@@ -96,8 +95,8 @@ export default class LightBox extends React.Component {
                                 {
                                     showForm == index
                                         ? <>
-                                            <Backdrop onClick={e => this.setState({ showForm: undefined })} />
-                                            <FormFeedBack
+                                            <Modal
+                                                onClick={e => this.setState({ showForm: undefined })}
                                                 onClose={e => this.setState({ showForm: undefined })}
                                                 order={this.order(Math.round(item.cost * lightBoxHeight * lightBoxWidth), lightBoxHeight, lightBoxWidth, item.title)}
                                             />

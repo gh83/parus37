@@ -1,16 +1,11 @@
-@import '../../styles/index.less';
-
-// .font-face(Geometria-Narrow, '/assets/fonts/Geometria-Narrow', 100, normal);
-// .font-face(Geometria-NarrowLight, '/assets/fonts/Geometria-NarrowLight', 100, normal);
-.font-face(Roboto-700, '/assets/fonts/roboto/roboto-v20-cyrillic_latin-700', 100, normal);
-.font-face(Roboto-regular, '/assets/fonts/roboto/roboto-v20-cyrillic_latin-regular', 100, normal);
+@import '../../styles/mixins.less';
+@import '../../styles/variables.less';
 
 .letter {
     .flex(row, space-around, flex-start);
 
     .calc {
         .flex(column, flex-start, stretch);
-        // width: 70%;
         padding-right: 30px;
         padding-left: 30px;
         padding-bottom: 30px;
@@ -145,7 +140,6 @@
                 .font(Roboto-regular, 15px, 100, normal);
                 color: @color-4;
                 font-size: 9px;
-                // text-transform: uppercase;
                 padding-top: 5px;
             }
         }
@@ -155,7 +149,6 @@
             padding-top: 30px;
             color: @color-4;
 
-            // .font(Geometria-Narrow, 15px, 100, normal);
             .calc_example-cost_title {
                 .flex(row, space-between, center);
                 .font(Roboto-regular, 18px, 100, normal);
@@ -184,11 +177,9 @@
                 .calc_template-letter_about {
                     .flex(column, flex-start, center);
                     max-width: 65%;
-                    // padding-left: 20px;
 
                     >span {
                         .font(Roboto-700, 20px, 100, normal);
-                        // text-transform: uppercase;
                         padding-bottom: 10px;
                         font-weight: bold;
                         font-size: 20px;

@@ -1,8 +1,7 @@
 import React from 'react';
 import './letter.less';
 import { LetterCost } from '../../data/letter-cost';
-import FormFeedBack from '../ui/form';
-import Backdrop from '../ui/backdrop';
+import Modal from '../ui/modal';
 
 export default class Letter extends React.Component {
     constructor(props) {
@@ -152,8 +151,8 @@ export default class Letter extends React.Component {
                                 {
                                     (showForm === index)
                                         ? <>
-                                            <Backdrop onClick={e => this.setState({ showForm: undefined })} />
-                                            <FormFeedBack
+                                            <Modal
+                                                onClick={e => this.setState({ showForm: undefined })}
                                                 onClose={e => this.setState({ showForm: undefined })}
                                                 order={this.order(cost * item.cost, letterSize, letterStyle, symbolQuantity, orderString, item.title)}
                                             />

@@ -1,12 +1,11 @@
-@import '../styles/index.less';
-
-// .font-face(Geometria-NarrowLight, '/assets/fonts/Geometria-NarrowLight', 100, normal);
-.font-face(Roboto-700, '/assets/fonts/roboto/roboto-v20-cyrillic_latin-700', 100, normal);
-
-
+@import '../styles/mixins.less';
+@import '../styles/variables.less';
 header {
     .flex(column, flex-start, stretch);
     min-height: 140px;
+    @media screen and (max-width: 950px) {
+        min-height: 100px;
+    }
 
     >div:first-child {
         .flex(row, space-around, center);
@@ -91,7 +90,6 @@ header {
 
                     .font(Roboto-700, 20px, 100, normal);
                     padding-left: 10px;
-                    // text-transform: uppercase;
                     text-decoration: none;
                     font-size: 20px;
                     font-weight: bold;
