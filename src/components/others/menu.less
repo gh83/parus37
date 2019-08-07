@@ -1,0 +1,71 @@
+@import '../../styles/mixins.less';
+@import '../../styles/variables.less';
+
+.menu.mobile {
+    .flex(column, flex-start, flex-start);
+    .font(Roboto-700, 20px, 100, normal);
+    z-index: 1000;
+    position: absolute;
+    font-size: 20px;
+    top: 100px;
+    left: 0;
+    right: 0;
+
+    >a {
+        &:first-child {
+            display: none;
+        }
+
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        color: @color-4;
+        padding: 15px 10px;
+        cursor: pointer;
+        background-color: @color-2;
+
+        &:not(:first-child) {
+            border-top: 1px solid lighten(@color-1, 50%);
+        }
+
+
+        &:hover {
+            background-color: lighten(@color-1, 50%);
+        }
+
+        &.active {
+            color: @color-3;
+        }
+    }
+
+    @media screen and (min-width: 950px) {
+        display: none;
+    }
+}
+
+.menu.header {
+    .flex(row, center, center);
+    flex-wrap: wrap;
+    .font(Roboto-regular, 20px, 100, normal);
+
+    >a {
+        display: block;
+        text-decoration: none;
+        padding: 10px 7px;
+        color: @color-4;
+        font-size: 16px;
+        font-weight: bold;
+        transition: color linear .2s;
+        border-bottom: 1px solid @color-2;
+        border-left: 1px solid lighten(@color-2, 35%);
+        border-right: 1px solid lighten(@color-2, 35%);
+
+        &:hover {
+            color: @color-2;
+        }
+
+        &.active {
+            color: @color-2;
+        }
+    }
+}

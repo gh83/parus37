@@ -1,0 +1,47 @@
+@import '../../styles/mixins.less';
+@import '../../styles/variables.less';
+
+.form-feedback {
+    .font(Roboto-regular, 15px, 100, normal);
+    position: relative;
+    top: 5px;
+    padding: 0px 0px;
+    z-index: 100;
+    width: 320px;
+    margin: 50px auto;
+
+    form {
+        .flex(column, flex-start, center) !important;
+        border-radius: 4px;
+        z-index: 110;
+        background-color: @color-3;
+        border-radius: 4px;
+        padding: 15px;
+
+        label {
+            .font(Roboto-700, 13px, 100, normal);
+        }
+
+        .modal_textarea {
+            .flex(column, flex-start, flex-start);
+            width: 300px;
+            margin-bottom: 10px;
+
+            textarea {
+                width: 100%;
+                height: 90px;
+                font-size: 13px;
+            }
+
+            span {
+                font-size: 11px;
+            }
+        }
+
+        .modal-buttons {
+            >button {
+                margin-left: 25px;
+            }
+        }
+    }
+}

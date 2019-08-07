@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Tabia';
+    src: local('Tabia Light'), local('Tabia-Light'),
+        url('Tabia-Light.woff2') format('woff2'),
+        url('Tabia-Light.woff') format('woff'),
+        url('Tabia-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }

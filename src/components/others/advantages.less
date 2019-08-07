@@ -1,0 +1,34 @@
+@import '../../styles/mixins.less';
+@import '../../styles/variables.less';
+
+.advantages {
+    .flex(column, center, center);
+    .font(Roboto-regular, 15px, 100, normal);
+    padding: 30px;
+
+    h2 {
+        .font(Roboto-700, 28px, 100, normal);
+        text-align: center;
+    }
+
+    >div {
+        .flex(row, center, center);
+        flex-wrap: wrap;
+
+        >div {
+            .flex(row, center, center);
+            padding: 15px;
+
+            i {
+                color: @color-2;
+                font-size: 15px;
+            }
+
+            span {
+                color: @color-4;
+                font-size: 15px;
+                padding-left: 10px;
+            }
+        }
+    }
+}

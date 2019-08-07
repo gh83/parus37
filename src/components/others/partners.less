@@ -1,0 +1,22 @@
+@import '../../styles/mixins.less';
+@import '../../styles/variables.less';
+
+.partners {
+    .flex(column, center, center);
+    .font(Roboto-regular, 15px, 100, normal);
+    padding: 30px;
+
+    h2 {
+        .font(Roboto-700, 28px, 100, normal);
+    }
+
+    >div {
+        .flex(row, center, center);
+        flex-wrap: wrap;
+
+        img {
+            display: block;
+            padding: 30px;
+        }
+    }
+}

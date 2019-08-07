@@ -1,0 +1,32 @@
+@import '../../styles/mixins.less';
+@import '../../styles/variables.less';
+
+.social-icons {
+    .flex(row, center, center);
+
+    a {
+        display: block;
+        margin-left: 30px;
+        color: @color-1;
+
+        @media screen and (max-width: 500px) {
+            margin-left: 5px;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+
+            @media screen and (max-width: 400px) {
+                width: 40px;
+                height: 40px;
+            }
+
+            transition: all linear .2s;
+
+            &:hover {
+                filter: contrast(200%);
+            }
+        }
+    }
+}

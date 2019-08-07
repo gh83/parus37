@@ -1,0 +1,149 @@
+@import '../../styles/mixins.less';
+@import '../../styles/variables.less';
+
+.panel {
+    .flex(row, space-around, flex-start);
+
+    .panel_calc {
+        .flex(column, flex-start, center);
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+
+        .panel_calc_size {
+            .flex(column, flex-start, flex-start);
+
+            .panel_calc_slider-y {
+                position: relative;
+                height: 150px;
+                width: 150px;
+                margin-top: 50px;
+                margin-right: 70px;
+
+                .input-y {
+                    transform: rotate(270deg);
+                    -moz-transform: rotate(270deg);
+                    position: absolute;
+                    bottom: 52px;
+                    left: -64px;
+                }
+
+                .panel_calc_banner {
+                    background: url('http://lorempixel.com/150/250');
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 250px;
+                    height: 150px;
+                    position: absolute;
+                    top: 0;
+                    right: -140px;
+                    border-radius: 4px;
+                }
+
+                .slider-y_label {
+                    .flex(row, flex-start, flex-start);
+                    position: absolute;
+                    top: -40px;
+                    left: -10px;
+
+                    >div {
+                        color: @color-4;
+                        font-size: 20px;
+                        padding-left: 5px;
+                    }
+                }
+            }
+
+            .panel_calc_slider-x {
+                .flex(row, center, center);
+                width: 310px;
+                padding-top: 10px;
+
+                // .input-x {}
+                .slider-x_label {
+                    .flex(row, flex-start, flex-start);
+                    padding-left: 10px;
+
+                    >div {
+                        color: @color-4;
+                        font-size: 20px;
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+
+        .panel_calc_template-cost {
+            .flex(column, flex-start, stretch);
+
+            .panel_calc_template-title {
+                .flex(row, space-between, center);
+                .font(Roboto-regular, 18px, 100, normal);
+                padding: 20px 10px 0px 80px;
+
+                @media screen and (max-width: 800px) {
+                    padding: 20px 5px 0 20px;
+                }
+            }
+
+            >.border {
+                margin: 20px;
+            }
+
+            .panel_calc_template {
+                .flex(row, space-between, center);
+                padding-bottom: 20px;
+
+                img {
+                    width: 250px;
+                    height: 150px;
+
+                    @media screen and (max-width: 550px) {
+                        width: 200px;
+                        height: 110px;
+                    }
+                }
+
+                .about-title {
+                    .font(Roboto-700, 20px, 100, normal);
+                    font-size: 18px;
+                    font-weight: bold;
+
+                    @media screen and (max-width: 960px) {
+                        font-size: 12px;
+                    }
+
+                    @media screen and (max-width: 550px) {
+                        font-weight: normal;
+                    }
+                }
+
+                .calc_template-panel_cost {
+                    .flex(column-reverse, center, center);
+                    width: 50px;
+
+                    >div {
+                        .flex(row, center, center);
+                    }
+                }
+            }
+
+            .panel_discription {
+                .flex(column, flex-start, flex-start);
+                .font(Roboto-regular, 20px, 100, normal);
+
+                span {
+                    &:first-child {
+                        font-size: 12px;
+                    }
+
+                    padding-bottom: 5px;
+                    font-size: 10px;
+
+                }
+            }
+
+        }
+    }
+}

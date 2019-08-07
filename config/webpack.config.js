@@ -41,16 +41,16 @@ module.exports = {
             cacheDirectory: false
           }
         }]
-      },
+    },
       {
-        test: /\.(otf|eot|svg|ttf|woff|woff2|jpg)$/,
+        test: /\.(otf|eot|svg|ttf|woff|woff2)$/,
         exclude: /node_modules/,
         use: {
           loader: 'file-loader',
           options: {
-            //emitFile: true,
-            // publicPath: 'assets',
-            name: '[path][name].[ext]',
+            //publicPath: 'assets',
+            name: '[name].[ext]',
+            outputPath: 'assets',
           }
         }
       },
@@ -86,7 +86,10 @@ module.exports = {
     host: 'localhost',
     port: '3000',
     contentBase: path.join(__dirname, 'public'),
-    historyApiFallback: true
+    historyApiFallback: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -97,9 +100,12 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       from: './src/assets',
-      to: 'assets/'
+      to: './assets'
+    },{
+      from: './src/server',
+      to: './'
     }], {
-      debug: true
+      debug: false
     })
   ],
   resolve: {
