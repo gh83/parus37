@@ -1,11 +1,12 @@
 import React from 'react';
+
 import './footer.less';
 import SocialIcons from '../components/ui/social-icons';
 
 export default class Footer extends React.Component {
     constructor(props) {
         super(props);
-    }
+    };
 
     render() {
         return (
@@ -38,6 +39,6 @@ export default class Footer extends React.Component {
 
                 <SocialIcons />
             </footer>
-        )
-    }
-}
+        );
+    };
+};

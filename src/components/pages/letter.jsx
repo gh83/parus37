@@ -1,5 +1,6 @@
 import React from 'react';
 import './letter.less';
+
 import { LetterCost } from '../../data/letter-cost';
 import Modal from '../ui/modal';
 
@@ -38,39 +39,26 @@ export default class Letter extends React.Component {
     };
 
     changeStyleLetter = style => {
-        if (style == 'simple') {
-            this.setState({
-                letterStylePrice: LetterCost.style.simple.cost,
-                letterStyle: LetterCost.style.simple.name,
-                isLetterStyleSelect: true
-            })
-        };
-        if (style == 'notsimple') {
-            this.setState({
-                letterStylePrice: LetterCost.style.notSimple.cost,
-                letterStyle: LetterCost.style.notSimple.name,
-                isLetterStyleSelect: true
-            })
-        };
-        if (style == 'italic') {
-            this.setState({
-                letterStylePrice: LetterCost.style.italic.cost,
-                letterStyle: LetterCost.style.italic.name,
-                isLetterStyleSelect: true
-            })
-        };
+        switch (style) {
+            case 'simple':
+                this.setState({ letterStylePrice: LetterCost.style.simple.cost, letterStyle: LetterCost.style.simple.name, isLetterStyleSelect: true });
+                break;
+            case 'notsimple':
+                this.setState({ letterStylePrice: LetterCost.style.notSimple.cost, letterStyle: LetterCost.style.notSimple.name, isLetterStyleSelect: true });
+                break;
+            case 'italic':
+                this.setState({ letterStylePrice: LetterCost.style.italic.cost, letterStyle: LetterCost.style.italic.name, isLetterStyleSelect: true });
+                break;
+        }
     };
 
     order(cost, size, style, count, string, title) {
-        return (
-            'Объемные световые буквы' + '\n'
-            + 'Надпись: ' + string + '\n'
-            + 'количество символов: ' + count + '  Размер: ' + size + ' cm' + '\n'
-            + 'Стиль: ' + style + '\n'
-            + title + '\n'
-            + 'цена: от ' + cost + ' руб'
-        );
-
+        return `Объемные световые буквы   
+Надпись ${string}
+количество символов: ${count}  Размер: ${size} см.
+Стиль: ${style}
+${title}
+цена: от ${cost} руб.`
     };
 
 

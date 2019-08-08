@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Menu from '../components/others/menu';
+
 import './header.less';
+import Menu from '../components/others/menu';
 import Backdrop from '../components/ui/backdrop';
 import SocialIcons from '../components/ui/social-icons';
 
@@ -11,8 +12,9 @@ export default class Header extends React.Component {
 
         this.state = {
             menuOpen: false
-        }
-    }
+        };
+    };
+
     render() {
         const { menuOpen } = this.state;
         return (
@@ -24,11 +26,7 @@ export default class Header extends React.Component {
                             <i className="fa fa-home" aria-hidden="true" />
                         </div>
                     </NavLink>
-
-                    <div
-                        className='mobile-menu-icon'
-                        onClick={e => this.setState({ menuOpen: !menuOpen })}
-                    >
+                    <div className='mobile-menu-icon' onClick={e => this.setState({ menuOpen: !menuOpen })}>
                         <i className="fa fa-bars" aria-hidden="true" />
                     </div>
                     <div className='contacts'>
@@ -42,18 +40,17 @@ export default class Header extends React.Component {
                         </div>
                     </div>
                     <SocialIcons />
-                    {menuOpen ? (<>
-                        <Backdrop onClick={e => this.setState({ menuOpen: false })} />
-                        <Menu
-                            type='mobile'
-                            onClick={e => this.setState({ menuOpen: false })}
-                        />
-                    </>) : null}
+                    {menuOpen ? (
+                        <>
+                            <Backdrop onClick={e => this.setState({ menuOpen: false })} />
+                            <Menu type='mobile' onClick={e => this.setState({ menuOpen: false })} />
+                        </>
+                    ) : null}
                 </div>
                 <div>
                     <Menu type='header' />
                 </div>
             </header>
-        )
-    }
-}
+        );
+    };
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './form.less';
 import Input from '../ui/input';
 import axios from 'axios';
@@ -6,7 +7,6 @@ import axios from 'axios';
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
-    // return true;
 };
 
 export default class FormFeedBack extends React.Component {
@@ -49,140 +49,98 @@ export default class FormFeedBack extends React.Component {
                     errorMessage: 'введите телефон для связи',
                     valid: true,
                     touched: false,
-                },
-            },
-        }
+                }
+            }
+        };
     };
 
 
     validateControl(value, validation) {
-        if (!validation) return true;
+        if (!validation)
+            return true;
 
         let isValid = true;
 
-        if (validation.required) {
-            isValid = value.trim() !== '' && isValid
-        };
+        if (validation.required)
+            isValid = ((value.trim() !== '') && isValid)
 
-        if (validation.email) {
-            isValid = validateEmail(value) && isValid
-        };
+        if (validation.email)
+            isValid = (validateEmail(value) && isValid)
 
         return isValid;
     };
 
     onChangeHandler(e, controlName) {
-        const formControls = { ...this.state.formControls };
-        const control = { ...formControls[controlName] };
+        const { formControls } = this.state;
+        const control = formControls[controlName];
 
         control.value = e.target.value;
         control.touched = true;
         control.valid = this.validateControl(control.value, control.validation);
 
-        formControls[controlName] = control;
-
         let isFormValid = true;
-
-        Object.keys(formControls).forEach(name => {
-            isFormValid = formControls[name].valid && isFormValid;
-        });
-
+        Object.keys(formControls).forEach(name => isFormValid = (formControls[name].valid && isFormValid));
         this.setState({ formControls, isFormValid });
-
     };
 
     renderInputs() {
-        return Object.keys(this.state.formControls).map((controlName, index) => {
-            const control = this.state.formControls[controlName];
+        const { formControls } = this.state;
+        return Object.keys(formControls).map((controlName, key) => {
+            const { type, autoFocus, style, styleDiv, value, valid, touched, label, errorMessage, validation } = formControls[controlName];
             return (
-                <Input
-                    key={index}
-                    type={control.type}
-                    autoFocus={control.autoFocus || false}
-                    style={control.style}
-                    styleDiv={control.styleDiv}
-                    value={control.value}
-                    valid={control.valid}
-                    touched={control.touched}
-                    label={control.label}
-                    errorMessage={control.errorMessage}
-                    shouldValidate={!!control.validation}
-                    onChange={e => this.onChangeHandler(e, controlName)}
-                />);
+                <Input key={key} type={type} autoFocus={autoFocus} style={style} styleDiv={styleDiv} value={value} valid={valid} touched={touched}
+                    label={label} errorMessage={errorMessage} shouldValidate={!!validation} onChange={e => this.onChangeHandler(e, controlName)} />
+            );
         });
     };
 
-    submitHandler = e => {
+    submitHandler(e) {
+        const { formControls = {}, messageText, order } = this.state;
+        const { onClose } = this.props;
+        const { name, phone, email } = formControls;
         e.preventDefault();
         axios({
             method: 'post',
             url: '/send.php',
             headers: { 'content-type': 'multipart/form-data' },
             data: {
-                name: `${this.state.formControls.name.value}`,
-                phone: `${this.state.formControls.phone.value}`,
-                email: `${this.state.formControls.email.value}`,
-                text: `${this.state.messageText}`,
-                order: `${this.state.order}`,
+                name: name.value,
+                phone: phone.value,
+                email: email.value,
+                text: messageText,
+                order: order,
             }
         })
             .then(result => this.setState({ mailSend: result.data.sent }))
             .catch(error => this.setState({ errorMailSend: error.message }));
-    }
+        onClose && onClose(e);
+    };
 
     render() {
-        const { onClose } = this.props;
-        const htmlFor = `${Math.random()}`;
-
+        const { onClose, order } = this.props;
+        const { isFormValid } = this.state;
 
         return (
             <div className='form-feedback'>
-                <form onSubmit={this.submitHandler}>
+                <form>
                     {this.renderInputs()}
-
-                    {
-                        this.props.order
-                            ? <div className='modal_textarea'>
-                                <label htmlFor={htmlFor + 1}>Ваш заказ</label>
-                                <textarea
-                                    className='input-text'
-                                    htmlFor={htmlFor + 1}
-                                    disabled
-                                    value={this.props.order}
-                                />
-                            </div>
-                            : null
-                    }
-
+                    {this.props.order ? (
+                        <div className='modal_textarea'>
+                            <label htmlFor='1'>Ваш заказ</label>
+                            <textarea className='input-text' htmlFor='1' disabled value={order} />
+                        </div>
+                    ) : null}
                     <div className='modal_textarea'>
-                        <label htmlFor={htmlFor}>Сообщение</label>
-                        <textarea
-                            className='input-text'
-                            id={htmlFor}
-                            maxLength='200'
-                            onChange={e => this.setState({ messageText: e.target.value })}
-                        />
+                        <label htmlFor='2'>Сообщение</label>
+                        <textarea className='input-text' id='2' maxLength='200' onChange={e => this.setState({ messageText: e.target.value })} />
                         <span>Не более 200 символов</span>
                     </div>
                     <div className='modal-buttons'>
-                        <button
-                            className='global-button'
-                            type='reset'
-                            onClick={e => onClose && onClose(e)}
-                        >
-                            Отмена
-                    </button>
-                        <button
-                            className='global-button'
-                            type='submit'
-                            disabled={!this.state.isFormValid}
-                            onClick={e => {this.submitHandler(e); onClose && onClose(e)}}
-                        >
-                            Отправить
-                    </button>
+                        <button className='global-button' type='reset' onClick={e => onClose && onClose(e)}>Отмена</button>
+                        <button className='global-button' type='submit' disabled={!isFormValid} onClick={e => this.submitHandler(e)}>Отправить</button>
                     </div>
                 </form>
             </div>
-        )
-    }
+        );
+    };
 };

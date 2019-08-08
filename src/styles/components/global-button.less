@@ -1,0 +1,27 @@
+.global-button {
+    .font(Roboto-regular, 15px, 100, normal);
+    padding         : 5px;
+    background-color: @color-2;
+    border          : 1px solid @color-2;
+    border-radius   : 4px;
+    cursor          : pointer;
+    transition      : .3s;
+    color           : @color-3;
+    font-size       : 12px;
+    font-weight     : bold;
+
+
+    &:disabled {
+        background-color: lightgrey;
+        border          : 1px solid lightgrey;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
+    &:hover {
+        color     : @color-3;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+}

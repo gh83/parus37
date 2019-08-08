@@ -1,6 +1,4 @@
-
 <?php
-// phpinfo() ;
 // Файлы phpmailer
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
@@ -10,18 +8,12 @@ require 'phpmailer/Exception.php';
 $rest_json = file_get_contents("php://input");
 $_POST = json_decode($rest_json, true);
 
-
 $name = $_POST['name'];
 $email = $_POST['email'];
 $text = $_POST['text'];
 $phone = $_POST['phone'];
 $order = $_POST['order'];
 $mail = new PHPMailer\PHPMailer\PHPMailer();
-
-// echo "|$name|$email|$text|";
-// echo '<pre>';
-// print_r($_POST);
-// print_r($GLOBALS);
 
 try {
     $msg = "ok";
@@ -38,18 +30,7 @@ try {
     // Получатель письма
     $mail->addAddress('mail@parus37.ru');  
     $mail->addAddress('parus37@inbox.ru'); // Ещё один, если нужен
-    // Прикрипление файлов к письму
-// if (!empty($_FILES['myfile']['name'][0])) {
-//     for ($ct = 0; $ct < count($_FILES['myfile']['tmp_name']); $ct++) {
-//         $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['myfile']['name'][$ct]));
-//         $filename = $_FILES['myfile']['name'][$ct];
-//         if (move_uploaded_file($_FILES['myfile']['tmp_name'][$ct], $uploadfile)) {
-//             $mail->addAttachment($uploadfile, $filename);
-//         } else {
-//             $msg .= 'Неудалось прикрепить файл ' . $uploadfile;
-//         }
-//     }   
-// }
+
         // -----------------------
         // Само письмо
         // -----------------------
@@ -70,6 +51,4 @@ echo "Сообщение не было отправлено. Неверно ук
 } catch (Exception $e) {
     echo "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
 }
-
-
 ?>

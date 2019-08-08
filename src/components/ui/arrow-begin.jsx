@@ -11,15 +11,12 @@ export default class ArrowBegin extends React.Component {
         this.buttonToggle = e => {
             const { arrowShowed } = this.state;
             if (window.pageYOffset > 300) {
-                if (!arrowShowed) {
+                if (!arrowShowed)
                     this.setState({ arrowShowed: true });
-                }
-            } else {
-                if (arrowShowed) {
+            } else
+                if (arrowShowed)
                     this.setState({ arrowShowed: false });
-                }
-            }
-        }
+        };
     };
 
     componentDidMount() {
@@ -31,27 +28,25 @@ export default class ArrowBegin extends React.Component {
     };
 
     smoothScroll() {
-        let i = window.pageYOffset;
+        let yOff = window.pageYOffset;
         const delay = .0001;
-        let timerScroll = setTimeout(function go() {
-            if (i > 0) setTimeout(go, delay);
-            i = i - 20;
-            window.scrollTo(0, i);
+        let timeoutID = setTimeout(function go() {
+            if (yOff > 0) {
+                clearTimeout(timeoutID);
+                timeoutID = setTimeout(go, delay);
+            }
+            yOff = yOff - 20;
+            window.scrollTo(0, yOff);
         }, delay);
     };
 
     render() {
         const { arrowShowed } = this.state;
         return (
-            <div
-                id='arrow-begin'
-                className='arrow-begin'
-                style={{ display: arrowShowed ? 'flex' : 'none' }}
-                onClick={this.smoothScroll}
-            >
+            <div id='arrow-begin' className='arrow-begin' style={{ display: arrowShowed ? 'flex' : 'none' }} onClick={this.smoothScroll}>
                 <i className="fa fa-angle-up" aria-hidden="true" />
                 <span>наверх</span>
             </div>
-        )
-    }
-}
+        );
+    };
+};

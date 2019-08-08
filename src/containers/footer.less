@@ -4,14 +4,14 @@
 footer {
     .flex(row, space-around, center);
     background-color: lighten(@color-1, 45%);
-    min-height: 120px;
-    height: 120px;
-    bottom: 0;
+    min-height      : 120px;
+    height          : 120px;
+    bottom          : 0;
 
     .footer_logo {
         img {
             display: block;
-            height: 70px;
+            height : 70px;
 
             @media screen and (max-width: 800px) {
                 display: none;
@@ -23,7 +23,7 @@ footer {
         .flex(column, center, flex-start);
         .font(Roboto-regular, 20px, 100, normal);
 
-        width: 300px;
+        width  : 300px;
         padding: 10px 0;
 
         @media screen and (max-width: 600px) {
@@ -32,7 +32,7 @@ footer {
 
         i {
             font-size: 15px;
-            color: @color-2;
+            color    : @color-2;
 
             @media screen and (max-width: 600px) {
                 font-size: 12px;
@@ -40,9 +40,9 @@ footer {
         }
 
         span {
-            font-size: 15px;
+            font-size   : 15px;
             padding-left: 5px;
-            color: @color-4;
+            color       : @color-4;
 
             @media screen and (max-width: 600px) {
                 font-size: 12px;
@@ -51,7 +51,7 @@ footer {
 
         a {
             text-decoration: none;
-            padding-bottom: 5px;
+            padding-bottom : 5px;
 
             &:hover {
                 span {
@@ -68,13 +68,13 @@ footer {
     .footer_button-price {
         button {
             .flex(column, center, center);
-            width: 60px;
-            height: 50px;
+            width    : 60px;
+            height   : 50px;
             font-size: 15px;
 
             @media screen and (max-width: 600px) {
-                width: 50px;
-                height: 40px;
+                width    : 50px;
+                height   : 40px;
                 font-size: 12px;
             }
         }
