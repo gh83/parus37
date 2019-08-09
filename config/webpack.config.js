@@ -41,7 +41,7 @@ module.exports = {
             cacheDirectory: false
           }
         }]
-    },
+      },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2)$/,
         exclude: /node_modules/,
@@ -99,12 +99,17 @@ module.exports = {
       filename: 'style.css',
     }),
     new CopyWebpackPlugin([{
-      from: './src/assets',
-      to: './assets'
-    },{
-      from: './src/server',
-      to: './'
-    }], {
+        from: './src/assets',
+        to: './assets'
+      }, {
+        from: './src/server',
+        to: './'
+      },
+      {
+        from: './src/support',
+        to: './'
+      }
+    ], {
       debug: false
     })
   ],

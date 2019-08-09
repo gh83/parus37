@@ -1,0 +1,4 @@
+User-agent: *
+
+Sitemap: http://parus37.ru/sitemap.xml
+host: parus37.ru
