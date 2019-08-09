@@ -21,5 +21,5 @@ export default class Menu extends React.Component{
                 <NavLink activeClassName='active' to='/contacts'><div>Контакты</div></NavLink>
             </nav>
         )
-    }
+    };
 };
