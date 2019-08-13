@@ -27,7 +27,7 @@ export default class ImageSlider extends React.Component {
     };
 
     changeImageButton(index) {
-        clearInterval(this.timerID);
+        // clearInterval(this.timerID);
         const { images } = this.props;
         const { currentImageNumber } = this.state;
         let newNumber = currentImageNumber + index;

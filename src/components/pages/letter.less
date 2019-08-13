@@ -37,15 +37,14 @@
                 }
 
                 .slider-y_label {
-                    .flex(row, flex-start, flex-start);
+                    .flex(row, flex-start, center);
                     position: absolute;
                     top: -40px;
                     left: -10px;
 
                     >div {
-                        .font(Geometria-Narrow, 15px, 100, normal);
-                        color: @color-4;
-                        font-size: 20px;
+                        .font(Roboto-regular, 15px, 100, normal);
+                        color: @color-4;                      
                         padding-left: 5px;
                     }
                 }
@@ -108,7 +107,7 @@
                     }
 
                     span:nth-child(2) {
-                        .font(Geometria-NarrowLight, 13px, 100, normal);
+                        .font(Roboto-regular, 12px, 100, normal);
                         color: @color-1;
                     }
                 }
@@ -116,7 +115,6 @@
                 div:nth-child(1) {
                     span:nth-child(1) {
                         .font(Geometria-Narrow, 90px, 100, normal);
-
                         @media screen and (max-width: 650px) {
                             font-size: 60px;
                         }

@@ -3,9 +3,9 @@ import './contacts.less';
 import { Map, Marker, MarkerLayout } from 'yandex-map-react';
 
 const points = [
-    [57.013384, 40.947225]
+    [57.012423, 40.947878]
 ];
-const center = [57.013384, 40.947225];
+const center = [57.012423, 40.947878];
 const markerStyles = {
     width: '40px',
     height: '40px',

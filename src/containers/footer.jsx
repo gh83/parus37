@@ -26,7 +26,7 @@ export default class Footer extends React.Component {
                     </a>
                     <div>
                         <i className="fa fa-map-marker" aria-hidden="true" />
-                        <span>Адрес офиса: 153032, Россия, Иваново ул. Станкостроителей 10</span>
+                        <span>Адрес офиса: 153032, Россия, Иваново ул. Поляковой 8б</span>
                     </div>
                 </div>
 

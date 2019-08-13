@@ -1,0 +1,245 @@
+.letter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.letter .calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+@media screen and (max-width: 650px) {
+  .letter .calc {
+    padding: 30px 20px 30px 5px;
+  }
+}
+.letter .calc .calc_size-letter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.letter .calc .calc_size-letter .slider-y {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin-top: 50px;
+  margin-right: 70px;
+}
+@media screen and (max-width: 650px) {
+  .letter .calc .calc_size-letter .slider-y {
+    margin-right: -130px;
+  }
+}
+.letter .calc .calc_size-letter .slider-y .input-y {
+  transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  position: absolute;
+  bottom: 52px;
+  left: -64px;
+}
+.letter .calc .calc_size-letter .slider-y .slider-y_label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: -40px;
+  left: -10px;
+}
+.letter .calc .calc_size-letter .slider-y .slider-y_label > div {
+  font-family: Roboto-regular;
+  font-size: 15px;
+  font-weight: 100;
+  font-style: normal;
+  color: black;
+  padding-left: 5px;
+}
+.letter .calc .calc_size-letter .slider-y .calc-banner {
+  background: url('/assets/img/site/letter-1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  right: -50px;
+  border-radius: 4px;
+}
+@media screen and (max-width: 650px) {
+  .letter .calc .calc_size-letter .slider-y .calc-banner {
+    display: none;
+  }
+}
+.letter .calc .calc_size-letter .calc_letter-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.letter .calc .calc_size-letter .calc_letter-select > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #535353;
+  border-radius: 4px;
+  width: 120px;
+  height: 150px;
+  margin-left: 15px;
+  z-index: 10;
+}
+@media screen and (max-width: 650px) {
+  .letter .calc .calc_size-letter .calc_letter-select > div {
+    width: 70px;
+  }
+}
+.letter .calc .calc_size-letter .calc_letter-select > div:hover {
+  border-color: #484fb5;
+  cursor: pointer;
+}
+.letter .calc .calc_size-letter .calc_letter-select > div.active {
+  border-color: #484fb5;
+}
+.letter .calc .calc_size-letter .calc_letter-select > div.active > span:first-child {
+  color: #484fb5;
+}
+.letter .calc .calc_size-letter .calc_letter-select > div span:nth-child(1) {
+  font-size: 90px;
+  color: #535353;
+}
+@media screen and (max-width: 650px) {
+  .letter .calc .calc_size-letter .calc_letter-select > div span:nth-child(1) {
+    font-size: 60px;
+  }
+}
+.letter .calc .calc_size-letter .calc_letter-select > div span:nth-child(2) {
+  font-family: Roboto-regular;
+  font-size: 12px;
+  font-weight: 100;
+  font-style: normal;
+  color: #535353;
+}
+.letter .calc .calc_size-letter .calc_letter-select div:nth-child(1) span:nth-child(1) {
+  font-family: Geometria-Narrow;
+  font-size: 90px;
+  font-weight: 100;
+  font-style: normal;
+}
+@media screen and (max-width: 650px) {
+  .letter .calc .calc_size-letter .calc_letter-select div:nth-child(1) span:nth-child(1) {
+    font-size: 60px;
+  }
+}
+.letter .calc .calc_size-letter .calc_letter-select > div:nth-child(3) > span:nth-child(1) {
+  font-style: italic;
+}
+.letter .calc .calc_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 30px;
+  align-self: center;
+}
+.letter .calc .calc_text > span {
+  font-family: Roboto-regular;
+  font-size: 15px;
+  font-weight: 100;
+  font-style: normal;
+  color: black;
+  font-size: 9px;
+  padding-top: 5px;
+}
+.letter .calc .calc_example-cost {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 30px;
+  color: black;
+}
+.letter .calc .calc_example-cost .calc_example-cost_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Roboto-regular;
+  font-size: 18px;
+  font-weight: 100;
+  font-style: normal;
+  padding: 20px 10px 0px 80px;
+}
+@media screen and (max-width: 800px) {
+  .letter .calc .calc_example-cost .calc_example-cost_title {
+    padding: 20px 5px 0 20px;
+  }
+}
+.letter .calc .calc_example-cost > .border {
+  margin: 20px;
+}
+.letter .calc .calc_example-cost .calc_template-letter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+.letter .calc .calc_example-cost .calc_template-letter > img {
+  display: block;
+  width: 25%;
+  max-width: 200px;
+  z-index: 1;
+}
+.letter .calc .calc_example-cost .calc_template-letter .calc_template-letter_about {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 65%;
+}
+.letter .calc .calc_example-cost .calc_template-letter .calc_template-letter_about > span {
+  font-family: Roboto-700;
+  font-weight: 100;
+  font-style: normal;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+@media screen and (max-width: 650px) {
+  .letter .calc .calc_example-cost .calc_template-letter .calc_template-letter_about > span {
+    font-size: 15px;
+  }
+}
+.letter .calc .calc_example-cost .calc_template-letter .calc_template-letter_about ul li {
+  font-family: Roboto-regular;
+  font-size: 15px;
+  font-weight: 100;
+  font-style: normal;
+}
+@media screen and (max-width: 650px) {
+  .letter .calc .calc_example-cost .calc_template-letter .calc_template-letter_about ul li {
+    font-size: 13px;
+  }
+}
+.letter .calc .calc_example-cost .calc_template-letter .calc_template-letter_cost {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+.letter .calc .calc_example-cost .calc_template-letter .calc_template-letter_cost > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
