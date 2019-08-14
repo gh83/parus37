@@ -4,24 +4,24 @@
 .menu.mobile {
     .flex(column, flex-start, flex-start);
     .font(Roboto-700, 20px, 100, normal);
-    z-index: 1000;
-    position: absolute;
+    z-index  : 1000;
+    position : absolute;
     font-size: 20px;
-    top: 100px;
-    left: 0;
-    right: 0;
+    top      : 100px;
+    left     : 0;
+    right    : 0;
 
     >a {
         &:first-child {
             display: none;
         }
 
-        display: block;
-        text-decoration: none;
-        width: 100%;
-        color: @color-4;
-        padding: 15px 10px;
-        cursor: pointer;
+        display         : block;
+        text-decoration : none;
+        width           : 100%;
+        color           : @color-4;
+        padding         : 15px 10px;
+        cursor          : pointer;
         background-color: @color-2;
 
         &:not(:first-child) {
@@ -46,19 +46,19 @@
 .menu.header {
     .flex(row, center, center);
     flex-wrap: wrap;
-    .font(Roboto-regular, 20px, 100, normal);
+    .font(Roboto-100, 20px, 100, normal);
 
     >a {
-        display: block;
+        display        : block;
         text-decoration: none;
-        padding: 10px 7px;
-        color: @color-4;
-        font-size: 16px;
-        font-weight: bold;
-        transition: color linear .2s;
-        border-bottom: 1px solid @color-2;
-        border-left: 1px solid lighten(@color-2, 35%);
-        border-right: 1px solid lighten(@color-2, 35%);
+        padding        : 10px 7px;
+        color          : @color-4;
+        font-size      : 15px;
+        font-weight    : bold;
+        transition     : color linear .2s;
+        border-bottom  : 1px solid @color-2;
+        border-left    : 1px solid lighten(@color-2, 35%);
+        border-right   : 1px solid lighten(@color-2, 35%);
 
         &:hover {
             color: @color-2;

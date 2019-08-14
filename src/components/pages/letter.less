@@ -6,8 +6,8 @@
 
     .calc {
         .flex(column, flex-start, stretch);
-        padding-right: 30px;
-        padding-left: 30px;
+        padding-right : 30px;
+        padding-left  : 30px;
         padding-bottom: 30px;
 
         @media screen and (max-width: 650px) {
@@ -18,10 +18,10 @@
             .flex(row, center, flex-end);
 
             .slider-y {
-                position: relative;
-                height: 150px;
-                width: 150px;
-                margin-top: 50px;
+                position    : relative;
+                height      : 150px;
+                width       : 150px;
+                margin-top  : 50px;
                 margin-right: 70px;
 
                 @media screen and (max-width: 650px) {
@@ -29,37 +29,37 @@
                 }
 
                 .input-y {
-                    transform: rotate(270deg);
+                    transform     : rotate(270deg);
                     -moz-transform: rotate(270deg);
-                    position: absolute;
-                    bottom: 52px;
-                    left: -64px;
+                    position      : absolute;
+                    bottom        : 52px;
+                    left          : -64px;
                 }
 
                 .slider-y_label {
                     .flex(row, flex-start, center);
                     position: absolute;
-                    top: -40px;
-                    left: -10px;
+                    top     : -40px;
+                    left    : -10px;
 
                     >div {
                         .font(Roboto-regular, 15px, 100, normal);
-                        color: @color-4;                      
+                        color       : @color-4;
                         padding-left: 5px;
                     }
                 }
 
                 .calc-banner {
-                    background: url('/assets/img/site/letter-1.jpg');
+                    background         : url('/assets/img/site/letter-1.jpg');
                     background-position: center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    width: 150px;
-                    height: 150px;
-                    position: absolute;
-                    top: 0;
-                    right: -50px;
-                    border-radius: 4px;
+                    background-size    : cover;
+                    background-repeat  : no-repeat;
+                    width              : 150px;
+                    height             : 150px;
+                    position           : absolute;
+                    top                : 0;
+                    right              : -50px;
+                    border-radius      : 4px;
 
                     @media screen and (max-width: 650px) {
                         display: none;
@@ -73,12 +73,12 @@
 
                 >div {
                     .flex(column, center, center);
-                    border: 1px solid @color-1;
+                    border       : 1px solid @color-1;
                     border-radius: 4px;
-                    width: 120px;
-                    height: 150px;
-                    margin-left: 15px;
-                    z-index: 10;
+                    width        : 120px;
+                    height       : 150px;
+                    margin-left  : 15px;
+                    z-index      : 10;
 
                     @media screen and (max-width: 650px) {
                         width: 70px;
@@ -86,7 +86,7 @@
 
                     &:hover {
                         border-color: @color-2;
-                        cursor: pointer;
+                        cursor      : pointer;
                     }
 
                     &.active {
@@ -99,7 +99,7 @@
 
                     span:nth-child(1) {
                         font-size: 90px;
-                        color: @color-1;
+                        color    : @color-1;
 
                         @media screen and (max-width: 650px) {
                             font-size: 60px;
@@ -115,6 +115,7 @@
                 div:nth-child(1) {
                     span:nth-child(1) {
                         .font(Geometria-Narrow, 90px, 100, normal);
+
                         @media screen and (max-width: 650px) {
                             font-size: 60px;
                         }
@@ -132,12 +133,12 @@
         .calc_text {
             .flex(column, flex-start, flex-start);
             padding-top: 30px;
-            align-self: center;
+            align-self : center;
 
             >span {
                 .font(Roboto-regular, 15px, 100, normal);
-                color: @color-4;
-                font-size: 9px;
+                color      : @color-4;
+                font-size  : 9px;
                 padding-top: 5px;
             }
         }
@@ -145,7 +146,7 @@
         .calc_example-cost {
             .flex(column, flex-start, stretch);
             padding-top: 30px;
-            color: @color-4;
+            color      : @color-4;
 
             .calc_example-cost_title {
                 .flex(row, space-between, center);
@@ -166,10 +167,10 @@
                 padding-top: 10px;
 
                 >img {
-                    display: block;
-                    width: 25%;
+                    display  : block;
+                    width    : 25%;
                     max-width: 200px;
-                    z-index: 1;
+                    z-index  : 1;
                 }
 
                 .calc_template-letter_about {
@@ -177,11 +178,11 @@
                     max-width: 65%;
 
                     >span {
-                        .font(Roboto-700, 20px, 100, normal);
+                        .font(Roboto-100, 20px, 100, normal);
                         padding-bottom: 10px;
-                        font-weight: bold;
-                        font-size: 20px;
-                        text-align: center;
+                        font-weight   : bold;
+                        font-size     : 20px;
+                        text-align    : center;
 
                         @media screen and (max-width: 650px) {
                             font-size: 15px;
@@ -192,6 +193,7 @@
                         li {
 
                             .font(Roboto-regular, 15px, 100, normal);
+
                             @media screen and (max-width: 650px) {
                                 font-size: 13px;
                             }

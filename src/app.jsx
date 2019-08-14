@@ -14,6 +14,7 @@ import Table from './components/pages/table';
 import Sticker from './components/pages/sticker';
 import Contacts from './components/pages/contacts';
 import Price from './components/pages/price';
+import Matching from './components/pages/matching';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class App extends React.Component {
             <Route exact path='/sticker' component={Sticker} />
             <Route exact path='/contacts' component={Contacts} />
             <Route exact path='/price' component={Price} />
+            <Route exact path='/matching' component={Matching} />
             <Route component={NotFound} />
           </Switch>
         </Main>
