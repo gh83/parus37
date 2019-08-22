@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './footer.less';
 import SocialIcons from '../components/ui/social-icons';
@@ -31,10 +32,12 @@ export default class Footer extends React.Component {
                 </div>
 
                 <div className='footer_button-price'>
-                    <button className='global-button'>
-                        <i className="fa fa-file-text-o" aria-hidden="true" />
-                        <span>прайс</span>
-                    </button>
+                    <NavLink to='/price'>
+                        <button className='global-button'>
+                            <i className="fa fa-file-text-o" aria-hidden="true" />
+                            <span>прайс лист</span>
+                        </button>
+                    </NavLink>
                 </div>
 
                 <SocialIcons />

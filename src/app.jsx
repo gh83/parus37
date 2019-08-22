@@ -15,6 +15,8 @@ import Sticker from './components/pages/sticker';
 import Contacts from './components/pages/contacts';
 import Price from './components/pages/price';
 import Matching from './components/pages/matching';
+import Frezer from './components/pages/frezer';
+import Orgglass from './components/pages/orgglass';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -37,6 +39,8 @@ export default class App extends React.Component {
             <Route exact path='/contacts' component={Contacts} />
             <Route exact path='/price' component={Price} />
             <Route exact path='/matching' component={Matching} />
+            <Route exact path='/frezer' component={Frezer} />
+            <Route exact path='/orgglass' component={Orgglass} />
             <Route component={NotFound} />
           </Switch>
         </Main>

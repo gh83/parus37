@@ -40,8 +40,7 @@ const Contacts = props => (
                 <i className="fa fa-clock-o" aria-hidden="true" />
                 <div>
                     <span>Будни: с 8-00 до 18-00</span>
-                    <span>Суббота: с 9-00 до 17-00</span>
-                    <span>Воскресенье: с 9-00 до 15-00</span>
+                    <span>суббота воскресенье: выходной</span>
                 </div>
             </div>
         </div>

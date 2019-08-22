@@ -1,12 +1,10 @@
 @import '../styles/mixins.less';
 @import '../styles/variables.less';
 
-@size: 1152px; //размер экрана при переключении на моб. меню
-
 header {
     .flex(column, flex-start, stretch);
-    min-height: 138px;
-    height    : 138px;
+    min-height: 133px;
+    // height    : 138px;
 
     @media screen and (max-width: @size) {
         min-height: 100px;
@@ -82,6 +80,7 @@ header {
                 }
 
                 i {
+                    font-size: 22px;
                     color: @color-2;
                 }
 

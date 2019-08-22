@@ -66,15 +66,20 @@ footer {
     }
 
     .footer_button-price {
+        >a {
+            text-decoration: none;
+        }
+
         button {
             .flex(column, center, center);
             width    : 60px;
-            height   : 50px;
+            height   : 60px;
             font-size: 15px;
+
 
             @media screen and (max-width: 600px) {
                 width    : 50px;
-                height   : 40px;
+                height   : 50px;
                 font-size: 12px;
             }
         }

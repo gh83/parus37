@@ -20,65 +20,65 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.jsx?$/,
-        exclude: /(node_modules|non_npm_dependencies)/,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-react',
-              ['@babel/preset-env', {
-                "targets": "> 0.25%, not dead"
-              }]
-            ],
-            plugins: [
-              '@babel/transform-runtime',
-              ["@babel/plugin-proposal-decorators", {
-                "legacy": true
-              }],
-              '@babel/plugin-proposal-class-properties'
-            ],
-            cacheDirectory: false
-          }
-        }]
-      },
-      {
-        test: /\.(otf|eot|svg|ttf|woff|woff2)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            //publicPath: 'assets',
-            name: '[name].[ext]',
-            outputPath: 'assets',
-          }
+      test: /\.jsx?$/,
+      exclude: /(node_modules|non_npm_dependencies)/,
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-react',
+            ['@babel/preset-env', {
+              "targets": "> 0.25%, not dead"
+            }]
+          ],
+          plugins: [
+            '@babel/transform-runtime',
+            ["@babel/plugin-proposal-decorators", {
+              "legacy": true
+            }],
+            '@babel/plugin-proposal-class-properties'
+          ],
+          cacheDirectory: false
         }
-      },
-      {
-        test: /\.(less|css)$/,
-        exclude: [
-          /node_modules/,
-        ],
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              plugins: [
-                require('autoprefixer')({
-                  browsers: ['last 3 version', '> 3%', 'safari 5', 'ios 6', 'android 4']
-                })
-              ]
-            }
-          },
-          {
-            loader: 'less-loader'
+      }]
+    },
+    {
+      test: /\.(otf|eot|svg|ttf|woff|woff2)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          //publicPath: 'assets',
+          name: '[name].[ext]',
+          outputPath: 'assets',
+        }
+      }
+    },
+    {
+      test: /\.(less|css)$/,
+      exclude: [
+        /node_modules/,
+      ],
+      use: [
+        MiniCssExtractPlugin.loader,
+        {
+          loader: 'css-loader'
+        },
+        {
+          loader: "postcss-loader",
+          options: {
+            plugins: [
+              require('autoprefixer')({
+                browsers: ['last 3 version', '> 3%', 'safari 5', 'ios 6', 'android 4']
+              })
+            ]
           }
-        ]
-      },
+        },
+        {
+          loader: 'less-loader'
+        }
+      ]
+    },
 
     ]
   },
@@ -99,19 +99,19 @@ module.exports = {
       filename: 'style.css',
     }),
     new CopyWebpackPlugin([{
-        from: './src/assets',
-        to: './assets'
-      }, {
-        from: './src/server',
-        to: './'
-      },
-      {
-        from: './src/support',
-        to: './'
-      }
+      from: './src/assets',
+      to: './assets'
+    }, {
+      from: './src/server',
+      to: './'
+    },
+    {
+      from: './src/support',
+      to: './'
+    }
     ], {
-      debug: false
-    })
+        debug: false
+      })
   ],
   resolve: {
     extensions: ['.js', '.jsx']
