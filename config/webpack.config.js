@@ -96,7 +96,7 @@ module.exports = {
   },
   devServer: {
     host: "localhost",
-    port: "8080",
+    port: "3000",
     contentBase: path.join(__dirname, "public"),
     historyApiFallback: true,
     headers: {
@@ -123,6 +123,10 @@ module.exports = {
         {
           from: "./src/support",
           to: "./"
+        },
+        {
+          from: "./src/price",
+          to: "./price"
         }
       ],
       {

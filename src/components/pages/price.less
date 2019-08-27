@@ -2,6 +2,24 @@
 @import '../../styles/variables.less';
 
 .price {
-    .flex(row, center, center);
+    .flex(column, center, center);
+    .font(Roboto-regular, 14px, 100, normal);
     padding: 30px;
+    >a{
+        padding: 5px;
+    }
+
+    .price__table {
+        padding: 10px;
+        border: 1px solid black;
+        tr {
+            &:first-child {
+                display: none;
+            }
+
+            .heading {
+                display: none;
+            }
+        }
+    }
 }
