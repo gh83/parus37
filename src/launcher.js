@@ -3,7 +3,6 @@ import ReactDom from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import './styles/index.less';
 import ArrowBegin from './components/ui/arrow-begin';
-
 import App from './app';
 
 ReactDom.render((

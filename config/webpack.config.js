@@ -95,6 +95,7 @@ module.exports = {
     ]
   },
   devServer: {
+    overlay: true,
     host: "localhost",
     port: "3000",
     contentBase: path.join(__dirname, "public"),
